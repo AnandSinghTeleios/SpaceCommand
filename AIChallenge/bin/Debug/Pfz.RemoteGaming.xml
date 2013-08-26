@@ -1,0 +1,759 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>Pfz.RemoteGaming</name>
+    </assembly>
+    <members>
+        <member name="T:Pfz.RemoteGaming.ObservableRemoteGameComponent">
+            <summary>
+            RemoteGameComponent that implements INotifyPropertyChanged.
+            </summary>
+        </member>
+        <member name="T:Pfz.RemoteGaming.RemoteGameComponent">
+            <summary>
+            Class that must be inherited to make a game component.
+            Note that properties that are send from client to server and vice-versa must be declared as
+            abstract get/set. The remote game engine will emit the appropriate classes to deal with
+            get/set changes and to notify the other side of the changed values.
+            </summary>
+        </member>
+        <member name="M:Pfz.RemoteGaming.RemoteGameComponent.Finalize">
+            <summary>
+            Finalizer. Calls Dispose(false);
+            </summary>
+        </member>
+        <member name="M:Pfz.RemoteGaming.RemoteGameComponent.Dispose">
+            <summary>
+            Frees all managed and unmanaged resources. Calls Dispose(true);
+            </summary>
+        </member>
+        <member name="M:Pfz.RemoteGaming.RemoteGameComponent.Dispose(System.Boolean)">
+            <summary>
+            Releases all resources used by this component.
+            </summary>
+        </member>
+        <member name="M:Pfz.RemoteGaming.RemoteGameComponent.OnInitialize">
+            <summary>
+            Implement this to initialize the object. Trying to use the game properties from the constructor doesn't work.
+            In the client, the OnInitialize only happens after receiving all initial values from the server.
+            </summary>
+        </member>
+        <member name="M:Pfz.RemoteGaming.RemoteGameComponent.OnChanged(Pfz.RemoteGaming.RemoteGamePropertyChanges)">
+            <summary>
+            Method invoked when a RemoteGameClient applies changes to this component based on
+            server changes. All changes in a given frame are notified together.
+            </summary>
+        </member>
+        <member name="M:Pfz.RemoteGaming.RemoteGameComponent.CheckUndisposed">
+            <summary>
+            Throws an exception if this component was disposed.
+            </summary>
+        </member>
+        <member name="M:Pfz.RemoteGaming.RemoteGameComponent.OnParticipantDisconnected">
+            <summary>
+            Method invoked when the Participant that owns this control disconnects.
+            It has no effect on client side.
+            </summary>
+        </member>
+        <member name="P:Pfz.RemoteGaming.RemoteGameComponent.WasDisposed">
+            <summary>
+            Gets a value indicating if this object was disposed.
+            </summary>
+        </member>
+        <member name="P:Pfz.RemoteGaming.RemoteGameComponent.IsClientComponent">
+            <summary>
+            This is more useful to the framework itself.
+            It tells if the component was created by a RemoteGameClient (true) or by a RemoteGameRoom/Participant (false).
+            </summary>
+        </member>
+        <member name="P:Pfz.RemoteGaming.RemoteGameComponent.IsPublic">
+            <summary>
+            On the server side, gets a value indicating if this component is public (seen by all participants)
+            or not. For the client, this property is always false.
+            </summary>
+        </member>
+        <member name="P:Pfz.RemoteGaming.RemoteGameComponent.Room">
+            <summary>
+            Gets the room in which this component was created.
+            </summary>
+        </member>
+        <member name="P:Pfz.RemoteGaming.RemoteGameComponent.Owner">
+            <summary>
+            Gets the owner of this component.
+            </summary>
+        </member>
+        <member name="P:Pfz.RemoteGaming.RemoteGameComponent.OwnerId">
+            <summary>
+            Gets the Id of the client that created this component.
+            Do not implement it, as it needs to be abstract by the engine.
+            </summary>
+        </member>
+        <member name="M:Pfz.RemoteGaming.ObservableRemoteGameComponent.OnChanged(Pfz.RemoteGaming.RemoteGamePropertyChanges)">
+            <summary>
+            Overriden to call PropertyChanged event.
+            </summary>
+        </member>
+        <member name="E:Pfz.RemoteGaming.ObservableRemoteGameComponent.PropertyChanged">
+            <summary>
+            Event invoked on the client side when properties are changed from the server side.
+            </summary>
+        </member>
+        <member name="T:Pfz.RemoteGaming.RemoteGamePropertyChange">
+            <summary>
+            This class represents a change of a component property value.
+            </summary>
+        </member>
+        <member name="P:Pfz.RemoteGaming.RemoteGamePropertyChange.OldValue">
+            <summary>
+            Gets the old value of the property.
+            </summary>
+        </member>
+        <member name="P:Pfz.RemoteGaming.RemoteGamePropertyChange.NewValue">
+            <summary>
+            Gets the new value of the property.
+            </summary>
+        </member>
+        <member name="T:Pfz.RemoteGaming.RemoteGamePropertyChanges">
+            <summary>
+            Dictionary of property changes.
+            </summary>
+        </member>
+        <member name="M:Pfz.RemoteGaming.RemoteGamePropertyChanges.ContainsKey(Pfz.RemoteGaming.RemoteGameProperty)">
+            <summary>
+            Checks if a given property is in the dictionary.
+            </summary>
+        </member>
+        <member name="M:Pfz.RemoteGaming.RemoteGamePropertyChanges.ContainsValue(Pfz.RemoteGaming.RemoteGamePropertyChange)">
+            <summary>
+            Checks if a given change is in the dictionary.
+            </summary>
+        </member>
+        <member name="M:Pfz.RemoteGaming.RemoteGamePropertyChanges.TryGetValue(Pfz.RemoteGaming.RemoteGameProperty,Pfz.RemoteGaming.RemoteGamePropertyChange@)">
+            <summary>
+            Tries to get the change for a given property.
+            </summary>
+        </member>
+        <member name="M:Pfz.RemoteGaming.RemoteGamePropertyChanges.GetEnumerator">
+            <summary>
+            Enumerates all the changes in this dictionary.
+            </summary>
+        </member>
+        <member name="P:Pfz.RemoteGaming.RemoteGamePropertyChanges.Keys">
+            <summary>
+            Gets the Properties that changed.
+            </summary>
+        </member>
+        <member name="P:Pfz.RemoteGaming.RemoteGamePropertyChanges.Values">
+            <summary>
+            Gets the value changes.
+            </summary>
+        </member>
+        <member name="P:Pfz.RemoteGaming.RemoteGamePropertyChanges.Item(Pfz.RemoteGaming.RemoteGameProperty)">
+            <summary>
+            Gets the value change for a given property;
+            </summary>
+        </member>
+        <member name="P:Pfz.RemoteGaming.RemoteGamePropertyChanges.Count">
+            <summary>
+            Gets the number of elements in this dictionary.
+            </summary>
+        </member>
+        <member name="T:Pfz.RemoteGaming.RemoteGameComponentChanges">
+            <summary>
+            Dictionary of components changes.
+            </summary>
+        </member>
+        <member name="M:Pfz.RemoteGaming.RemoteGameComponentChanges.ContainsKey(Pfz.RemoteGaming.RemoteGameComponent)">
+            <summary>
+            Checks if a component is in this dictionary.
+            </summary>
+        </member>
+        <member name="M:Pfz.RemoteGaming.RemoteGameComponentChanges.ContainsValue(Pfz.RemoteGaming.RemoteGamePropertyChanges)">
+            <summary>
+            Checks if a PropertyChanges is in this dictionary.
+            </summary>
+        </member>
+        <member name="M:Pfz.RemoteGaming.RemoteGameComponentChanges.TryGetValue(Pfz.RemoteGaming.RemoteGameComponent,Pfz.RemoteGaming.RemoteGamePropertyChanges@)">
+            <summary>
+            Tries to get the changes for a given component.
+            </summary>
+        </member>
+        <member name="M:Pfz.RemoteGaming.RemoteGameComponentChanges.GetEnumerator">
+            <summary>
+            Get an enumerator for all items in this dictionary.
+            </summary>
+        </member>
+        <member name="P:Pfz.RemoteGaming.RemoteGameComponentChanges.Keys">
+            <summary>
+            Gets the components that are in this dictionary.
+            </summary>
+        </member>
+        <member name="P:Pfz.RemoteGaming.RemoteGameComponentChanges.Values">
+            <summary>
+            Gets the PropertyChanges that are in this dictionary.
+            </summary>
+        </member>
+        <member name="P:Pfz.RemoteGaming.RemoteGameComponentChanges.Item(Pfz.RemoteGaming.RemoteGameComponent)">
+            <summary>
+            Gets the changes for a given component.
+            </summary>
+        </member>
+        <member name="P:Pfz.RemoteGaming.RemoteGameComponentChanges.Count">
+            <summary>
+            Gets the number of items in this dictionary.
+            </summary>
+        </member>
+        <member name="T:Pfz.RemoteGaming.ThreadedAnimation">
+            <summary>
+            This class is responsible for holding an UnsafeThreadedAnimation.
+            When disposed or collected it will release the thread used by such
+            animation.
+            </summary>
+        </member>
+        <member name="M:Pfz.RemoteGaming.ThreadedAnimation.CreateFromAction(Pfz.Threading.IteratorAction)">
+            <summary>
+            Creates a new ThreadedAnimation from the given action.
+            </summary>
+            <param name="action"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Pfz.RemoteGaming.ThreadedAnimation.op_Implicit(Pfz.RemoteGaming.UnsafeThreadedAnimation)~Pfz.RemoteGaming.ThreadedAnimation">
+            <summary>
+            Implicit cast from UnsafeThreadedAnimation to ThreadedAnimation.
+            </summary>
+        </member>
+        <member name="T:Pfz.RemoteGaming.UnsafeThreadedAnimation">
+            <summary>
+            This is the class that should be inherited to create threaded animations.
+            You must handle it through the ThreadedAnimation safe class.
+            </summary>
+        </member>
+        <member name="M:Pfz.RemoteGaming.UnsafeThreadedAnimation.OnRun">
+            <summary>
+            Catches the RemoteGameObjectDisposedException and class the OnAnimate.
+            </summary>
+        </member>
+        <member name="M:Pfz.RemoteGaming.UnsafeThreadedAnimation.OnAnimate">
+            <summary>
+            Must be implemented to do the animation.
+            </summary>
+        </member>
+        <member name="T:Pfz.RemoteGaming.AnimationsAnimation">
+            <summary>
+            A single animation object capable of animating multiple animations at the same time.
+            </summary>
+        </member>
+        <member name="M:Pfz.RemoteGaming.AnimationsAnimation.Dispose(System.Boolean)">
+            <summary>
+            Releases all active animations.
+            </summary>
+        </member>
+        <member name="M:Pfz.RemoteGaming.AnimationsAnimation.Add(System.Collections.Generic.IEnumerator{System.Boolean})">
+            <summary>
+            Adds a new animation to be played together with the others.
+            </summary>
+        </member>
+        <member name="M:Pfz.RemoteGaming.AnimationsAnimation.Add(Pfz.Threading.IteratorAction)">
+            <summary>
+            Adds the given action as an animation.
+            </summary>
+        </member>
+        <member name="M:Pfz.RemoteGaming.AnimationsAnimation.AddAsParallel(Pfz.Threading.IteratorAction)">
+            <summary>
+            Adds the given action as a parallel animation.
+            As the name says, they can run in parallel, so do not count on their order.
+            Parallel animations should not depend on other parallel animations or they can dead-lock.
+            </summary>
+        </member>
+        <member name="M:Pfz.RemoteGaming.AnimationsAnimation.AddAsParallel(Pfz.RemoteGaming.ThreadedAnimation)">
+            <summary>
+            Adds the the given threaded animation as a parallel one.
+            As the name says, they can run in parallel, so do not count on their order.
+            Parallel animations should not depend on other parallel animations or they can dead-lock.
+            Note that ThreadedAnimations can be added as custom (non-parallel) animations.
+            </summary>
+        </member>
+        <member name="M:Pfz.RemoteGaming.AnimationsAnimation.Update">
+            <summary>
+            Updates (goes to the next frame of all animations).
+            </summary>
+        </member>
+        <member name="T:Pfz.RemoteGaming.RemoteGameObjectDisposedException">
+            <summary>
+            Exception thrown by RemoteGameComponent when they are disposed.
+            </summary>
+        </member>
+        <member name="T:Pfz.RemoteGaming.ClientGamePropertyAttribute">
+            <summary>
+            Attribute used in game properties (abstract) to tell that they are acessible by the client.
+            </summary>
+        </member>
+        <member name="T:Pfz.RemoteGaming.RemoteGameChangedEventArgs">
+            <summary>
+            Argument passed to the RemoteGameClient.Changed event.
+            </summary>
+        </member>
+        <member name="P:Pfz.RemoteGaming.RemoteGameChangedEventArgs.AddedComponents">
+            <summary>
+            Gets a collection of the added components.
+            May be null if there are no new components.
+            </summary>
+        </member>
+        <member name="P:Pfz.RemoteGaming.RemoteGameChangedEventArgs.RemovedComponents">
+            <summary>
+            Gets a collection of removed components.
+            May be null if there aren't removed components.
+            </summary>
+        </member>
+        <member name="P:Pfz.RemoteGaming.RemoteGameChangedEventArgs.ComponentChanges">
+            <summary>
+            Gets a dictionary with all changed components, with their respective changed properties and values.
+            </summary>
+        </member>
+        <member name="T:Pfz.RemoteGaming.RemoteGameRequest">
+            <summary>
+            Class that must be inherited in a common area, so the client can send the request to the server.
+            </summary>
+        </member>
+        <member name="T:Pfz.RemoteGaming.RemoteGameConnectedEventArgs">
+            <summary>
+            Argument passed to the RemoteGameListener.ClientConnected event.
+            </summary>
+        </member>
+        <member name="P:Pfz.RemoteGaming.RemoteGameConnectedEventArgs.Connection">
+            <summary>
+            Gets the Connection that just connected.
+            </summary>
+        </member>
+        <member name="P:Pfz.RemoteGaming.RemoteGameConnectedEventArgs.Participant">
+            <summary>
+            Gets or sets the participant. Note that it starts as null.
+            </summary>
+        </member>
+        <member name="P:Pfz.RemoteGaming.RemoteGameConnectedEventArgs.ShouldDisconnect">
+            <summary>
+            Gets or sets a flag telling the the client should be disconnected. It is only useful if Participant is kept as null.
+            </summary>
+        </member>
+        <member name="T:Pfz.RemoteGaming.RemoteGameExceptionEventArgs">
+            <summary>
+            Argument passed as parameter to RemoteGameClient.ExceptionThrown and RemoteGameListener.ExceptionThrown.
+            </summary>
+        </member>
+        <member name="P:Pfz.RemoteGaming.RemoteGameExceptionEventArgs.Exception">
+            <summary>
+            Gets the Exception that was thrown.
+            </summary>
+        </member>
+        <member name="P:Pfz.RemoteGaming.RemoteGameExceptionEventArgs.WasHandled">
+            <summary>
+            Set this to true if you don't want the exception to be rethrown.
+            </summary>
+        </member>
+        <member name="T:Pfz.RemoteGaming.RemoteGameClient">
+            <summary>
+            Class used to connect to a remote game.
+            </summary>
+        </member>
+        <member name="M:Pfz.RemoteGaming.RemoteGameClient.#ctor(System.Reflection.Assembly[])">
+            <summary>
+            Creates a new game client, prepared to find the real implementations in the given
+            clientAssemblies. If none is provided, the entry assembly is used.
+            </summary>
+        </member>
+        <member name="M:Pfz.RemoteGaming.RemoteGameClient.Dispose(System.Boolean)">
+            <summary>
+            Releases all resources used by this object.
+            </summary>
+        </member>
+        <member name="M:Pfz.RemoteGaming.RemoteGameClient.Start(System.String,System.Int32)">
+            <summary>
+            Starts a game connecting to the given host and port.
+            </summary>
+        </member>
+        <member name="M:Pfz.RemoteGaming.RemoteGameClient.Start(Pfz.Remoting.IConnection)">
+            <summary>
+            Starts a game using the given client.
+            </summary>
+        </member>
+        <member name="M:Pfz.RemoteGaming.RemoteGameClient.GetComponents">
+            <summary>
+            Gets all components in this client.
+            </summary>
+            <returns>An array with all components in this Client or null if this client was disposed.</returns>
+        </member>
+        <member name="M:Pfz.RemoteGaming.RemoteGameClient.Request(Pfz.RemoteGaming.RemoteGameRequest,System.Action{System.Object})">
+            <summary>
+            Send a request to the server. Use this when the action cannot be lost 
+            (for example, changing a property to 1 and then to 2 can only send 2 to the server, 
+            while a Request with value one and a Request with value two can be received in the same
+            frame but both will be send to the server).
+            </summary>
+        </member>
+        <member name="M:Pfz.RemoteGaming.RemoteGameClient.SyncRequest(Pfz.RemoteGaming.RemoteGameRequest)">
+            <summary>
+            Requests an action from the server and waits until it responds.
+            Do not call this from the Changed event or OnInitialize method of your 
+            game components or you will cause a dead-lock.
+            </summary>
+        </member>
+        <member name="M:Pfz.RemoteGaming.RemoteGameClient.GetImplementedType(System.Type)">
+            <summary>
+            Gets the implemented type for a common/client abstract game type.
+            </summary>
+        </member>
+        <member name="M:Pfz.RemoteGaming.RemoteGameClient.BeginUpdates">
+            <summary>
+            Call this method when making lots of changes.
+            Notifications to the server will be disabled until you dispose the returned
+            object.
+            </summary>
+        </member>
+        <member name="M:Pfz.RemoteGaming.RemoteGameClient.RegisterAction``1(System.Func{``0,System.Object})">
+            <summary>
+            Registers the action to be taken by a given request type.
+            </summary>
+        </member>
+        <member name="M:Pfz.RemoteGaming.RemoteGameClient.RegisterAction``1(System.Func{System.Object})">
+            <summary>
+            Registers the action to be taken by a given request type.
+            </summary>
+        </member>
+        <member name="P:Pfz.RemoteGaming.RemoteGameClient.Connection">
+            <summary>
+            Gets the Connection used this by Game Client.
+            You can use it to identify if an exception was thrown by a connection lost or by another reason.
+            </summary>
+        </member>
+        <member name="P:Pfz.RemoteGaming.RemoteGameClient.ClientId">
+            <summary>
+            Gets the client id of this client.
+            Server components created for this client will only reference it by the Id.
+            </summary>
+        </member>
+        <member name="E:Pfz.RemoteGaming.RemoteGameClient.Changed">
+            <summary>
+            Event invoked when components are added, removed or their properties are changed.
+            </summary>
+        </member>
+        <member name="E:Pfz.RemoteGaming.RemoteGameClient.ExceptionThrown">
+            <summary>
+            Event invoked when an exception is thrown. The connection will be lost in either case,
+            but you may want to avoid the exception from crashing the application.
+            </summary>
+        </member>
+        <member name="T:Pfz.RemoteGaming.RemoteGameListener">
+            <summary>
+            Class that should be used by the game server.
+            It listens for client connections and then starts the game.
+            </summary>
+        </member>
+        <member name="M:Pfz.RemoteGaming.RemoteGameListener.#ctor(System.Net.IPAddress,System.Int32,System.Reflection.Assembly[])">
+            <summary>
+            Creates a new GameListener for the given address and port.
+            </summary>
+        </member>
+        <member name="M:Pfz.RemoteGaming.RemoteGameListener.#ctor(Pfz.Remoting.IConnectionListener{Pfz.Remoting.IConnection},System.Reflection.Assembly[])">
+            <summary>
+            Creates a new RemoteGameListener using the given Listener.
+            </summary>
+        </member>
+        <member name="M:Pfz.RemoteGaming.RemoteGameListener.Dispose(System.Boolean)">
+            <summary>
+            Closes the internal listener.
+            </summary>
+        </member>
+        <member name="M:Pfz.RemoteGaming.RemoteGameListener.Start">
+            <summary>
+            Starts listening.
+            </summary>
+        </member>
+        <member name="E:Pfz.RemoteGaming.RemoteGameListener.ClientConnected">
+            <summary>
+            Event invoked when a new connection is accepted. Use it to configure the Tcp/IP client.
+            </summary>
+        </member>
+        <member name="E:Pfz.RemoteGaming.RemoteGameListener.ExceptionThrown">
+            <summary>
+            Event invoked when an exception is thrown by the game. Such exception can be treated, but the connection 
+            to that client will be closed in any case.
+            </summary>
+        </member>
+        <member name="T:Pfz.RemoteGaming.RemoteGameException">
+            <summary>
+            Exception created by the RemoteGameFramework.
+            </summary>
+        </member>
+        <member name="M:Pfz.RemoteGaming.RemoteGameException.#ctor">
+            <summary>
+            Only following the pattern for exception constructors.
+            </summary>
+        </member>
+        <member name="M:Pfz.RemoteGaming.RemoteGameException.#ctor(System.String)">
+            <summary>
+            Only following the pattern for exception constructors.
+            </summary>
+        </member>
+        <member name="M:Pfz.RemoteGaming.RemoteGameException.#ctor(System.String,System.Exception)">
+            <summary>
+            Only following the pattern for exception constructors.
+            </summary>
+        </member>
+        <member name="M:Pfz.RemoteGaming.RemoteGameException.#ctor(System.Runtime.Serialization.SerializationInfo,System.Runtime.Serialization.StreamingContext)">
+            <summary>
+            Only following the pattern for exception constructors.
+            </summary>
+        </member>
+        <member name="T:Pfz.RemoteGaming.RemoteGameRoom">
+            <summary>
+            This class represents a Room in the server game.
+            Changes to remote game properties are seen by everyone that is in the same room.
+            Usually games start with exclusive rooms (so only client and server comunicate) and then
+            the Participant joins another (common) room.
+            </summary>
+        </member>
+        <member name="M:Pfz.RemoteGaming.RemoteGameRoom.#ctor">
+            <summary>
+            Creates a new room.
+            </summary>
+        </member>
+        <member name="M:Pfz.RemoteGaming.RemoteGameRoom.Dispose(System.Boolean)">
+            <summary>
+            Disposes the actual room.
+            </summary>
+        </member>
+        <member name="M:Pfz.RemoteGaming.RemoteGameRoom.ApplyChangesImmediately">
+            <summary>
+            Applies any changes done to this room immediately.
+            You must call this method if the room doesn't have an animation.
+            </summary>
+        </member>
+        <member name="M:Pfz.RemoteGaming.RemoteGameRoom.CreateComponent``1">
+            <summary>
+            Creates a component into this room that is not owned by any participant and is public.
+            </summary>
+        </member>
+        <member name="M:Pfz.RemoteGaming.RemoteGameRoom.GetComponents">
+            <summary>
+            Gets all components in this room.
+            Note that private components are only acessible by the Participant.GetPrivateComponents.
+            </summary>
+            <returns>An array with the components or null if this room was disposed.</returns>
+        </member>
+        <member name="M:Pfz.RemoteGaming.RemoteGameRoom.GetParticipants">
+            <summary>
+            Gets all participants in this room.
+            </summary>
+            <returns>An array with the participants or null if this room was disposed.</returns>
+        </member>
+        <member name="M:Pfz.RemoteGaming.RemoteGameRoom.Start">
+            <summary>
+            Starts this run without an animation.
+            Use it for rooms that respond to requests only.
+            </summary>
+        </member>
+        <member name="M:Pfz.RemoteGaming.RemoteGameRoom.Start(System.Double,System.Collections.Generic.IEnumerator{System.Boolean})">
+            <summary>
+            Starts this room, which will run the given animation in the given interval times.
+            </summary>
+        </member>
+        <member name="M:Pfz.RemoteGaming.RemoteGameRoom.RegisterAction``1(System.Func{Pfz.RemoteGaming.RemoteGameParticipant,``0,System.Object})">
+            <summary>
+            Registers the action to be taken by a given request type.
+            </summary>
+        </member>
+        <member name="M:Pfz.RemoteGaming.RemoteGameRoom.RegisterAction``1(System.Func{System.Object})">
+            <summary>
+            Registers the action to be taken by a given request type.
+            </summary>
+        </member>
+        <member name="M:Pfz.RemoteGaming.RemoteGameRoom.RegisterAction``1(System.Func{``0,System.Object})">
+            <summary>
+            Registers the action to be taken by a given request type.
+            </summary>
+        </member>
+        <member name="M:Pfz.RemoteGaming.RemoteGameRoom.RegisterAction``1(System.Func{Pfz.RemoteGaming.RemoteGameParticipant,System.Object})">
+            <summary>
+            Registers the action to be taken by a given request type.
+            </summary>
+        </member>
+        <member name="P:Pfz.RemoteGaming.RemoteGameRoom.MustDisposeIfEmpty">
+            <summary>
+            Gets or sets a value telling if the room must be disposed if there are no Participants in it.
+            The default is true.
+            </summary>
+        </member>
+        <member name="P:Pfz.RemoteGaming.RemoteGameRoom.ParticipantCount">
+            <summary>
+            Gets the number of participants in this room.
+            </summary>
+        </member>
+        <member name="P:Pfz.RemoteGaming.RemoteGameRoom.UpdateTime">
+            <summary>
+            Gets or sets the interval time used between frames.
+            A value of 0 means that there will be no updates.
+            </summary>
+        </member>
+        <member name="T:Pfz.RemoteGaming.RemoteGameParticipant">
+            <summary>
+            Class created by the RemoteGameListener when a new connection is created.
+            </summary>
+        </member>
+        <member name="M:Pfz.RemoteGaming.RemoteGameParticipant.Finalize">
+            <summary>
+            Calls Dispose(false);
+            </summary>
+        </member>
+        <member name="M:Pfz.RemoteGaming.RemoteGameParticipant.Dispose">
+            <summary>
+            Calls Dispose(true);
+            </summary>
+        </member>
+        <member name="M:Pfz.RemoteGaming.RemoteGameParticipant.Dispose(System.Boolean)">
+            <summary>
+            Releases all resources used by this participant.
+            </summary>
+        </member>
+        <member name="M:Pfz.RemoteGaming.RemoteGameParticipant.BeginUpdates">
+            <summary>
+            Use this to do a lot of updates together, so the notifications will only be
+            sent when ending all updates.
+            Use it in a using clause, so notifications are restored at the end.
+            </summary>
+        </member>
+        <member name="M:Pfz.RemoteGaming.RemoteGameParticipant.CreateComponent``1">
+            <summary>
+            Creates a private component owned by this participant.
+            </summary>
+        </member>
+        <member name="M:Pfz.RemoteGaming.RemoteGameParticipant.CreateComponent``1(System.Boolean)">
+            <summary>
+            Creates a new component owned by this room, but lets you decide if it is public or not.
+            </summary>
+        </member>
+        <member name="M:Pfz.RemoteGaming.RemoteGameParticipant.GetPrivateComponents">
+            <summary>
+            Gets all the private components of this participant.
+            </summary>
+            <returns>An array with the private components or null if this participant was disposed.</returns>
+        </member>
+        <member name="M:Pfz.RemoteGaming.RemoteGameParticipant.Request(Pfz.RemoteGaming.RemoteGameRequest,System.Action{System.Object})">
+            <summary>
+            Requests an action from the client.
+            Optionally sets a result callback. Note that the result may be null if the connection
+            is closed, even if null is not a valid result value.
+            </summary>
+        </member>
+        <member name="M:Pfz.RemoteGaming.RemoteGameParticipant.SyncRequest(Pfz.RemoteGaming.RemoteGameRequest)">
+            <summary>
+            Requests something to the client and keeps waiting until it responds.
+            Do not call this from an animation, only from secondary threads, or you will cause a dead-lock.
+            </summary>
+        </member>
+        <member name="P:Pfz.RemoteGaming.RemoteGameParticipant.WasDisposed">
+            <summary>
+            Gets a value indicating if this participant was disposed.
+            </summary>
+        </member>
+        <member name="P:Pfz.RemoteGaming.RemoteGameParticipant.Connection">
+            <summary>
+            Gets the Connection bound to this participant.
+            </summary>
+        </member>
+        <member name="P:Pfz.RemoteGaming.RemoteGameParticipant.ParticipantId">
+            <summary>
+            Gets the Id attributed to this Participant. Changing from room will change this value.
+            </summary>
+        </member>
+        <member name="P:Pfz.RemoteGaming.RemoteGameParticipant.Room">
+            <summary>
+            Gets or sets the room to which this client is bound.
+            </summary>
+        </member>
+        <member name="T:Pfz.RemoteGaming.RemoteGameProperty">
+            <summary>
+            Class used by the emitted RemoteGameComponent classes. You don't need to use it directly, but it must be public to be acessible by
+            the emitted classes.
+            </summary>
+        </member>
+        <member name="M:Pfz.RemoteGaming.RemoteGameProperty.GetAllProperties">
+            <summary>
+            Gets a copy of all available game properties.
+            Note that such list changes everytime a RemoteGameClient connects.
+            </summary>
+        </member>
+        <member name="M:Pfz.RemoteGaming.RemoteGameProperty.GetPropertyValueById``1(System.Int32,Pfz.RemoteGaming.RemoteGameComponent)">
+            <summary>
+            Gets the value of a property by id.
+            </summary>
+        </member>
+        <member name="M:Pfz.RemoteGaming.RemoteGameProperty.SetPropertyValueById``1(System.Int32,Pfz.RemoteGaming.RemoteGameComponent,``0)">
+            <summary>
+            Sets the value of a property by id.
+            </summary>
+        </member>
+        <member name="M:Pfz.RemoteGaming.RemoteGameProperty.GetVolatileProperties(System.Type)">
+            <summary>
+            Gets a collection with all volatile game properties found on the given type.
+            </summary>
+        </member>
+        <member name="M:Pfz.RemoteGaming.RemoteGameProperty.Equals(Pfz.RemoteGaming.RemoteGameProperty)">
+            <summary>
+            Compares this property info with another one.
+            </summary>
+        </member>
+        <member name="M:Pfz.RemoteGaming.RemoteGameProperty.Equals(System.Object)">
+            <summary>
+            Compares this property info with another object.
+            </summary>
+        </member>
+        <member name="M:Pfz.RemoteGaming.RemoteGameProperty.GetHashCode">
+            <summary>
+            Gets the Id of this property as the hashcode.
+            </summary>
+        </member>
+        <member name="M:Pfz.RemoteGaming.RemoteGameProperty.GetPropertyInfo">
+            <summary>
+            Tries to get a real property-info based on this game property info.
+            </summary>
+        </member>
+        <member name="P:Pfz.RemoteGaming.RemoteGameProperty.Id">
+            <summary>
+            Gets the Id of this property. Such Id is unique between all game-properties, independent of the class.
+            </summary>
+        </member>
+        <member name="P:Pfz.RemoteGaming.RemoteGameProperty.DeclaringType">
+            <summary>
+            Gets the type that declares this game property.
+            </summary>
+        </member>
+        <member name="P:Pfz.RemoteGaming.RemoteGameProperty.PropertyType">
+            <summary>
+            Gets the type of the property.
+            </summary>
+        </member>
+        <member name="P:Pfz.RemoteGaming.RemoteGameProperty.Name">
+            <summary>
+            Gets the name of the property.
+            </summary>
+        </member>
+        <member name="P:Pfz.RemoteGaming.RemoteGameProperty.IsClientProperty">
+            <summary>
+            Gets a value indicating if this property is changeable from the client side.
+            </summary>
+        </member>
+        <member name="P:Pfz.RemoteGaming.RemoteGameProperty.IsVolatile">
+            <summary>
+            Gets a value indicating if this property is volatile.
+            Volatile game properties are sent again each frame, so a lost frame doesn't cause a delay until
+            it is received, as it can be discarded.
+            </summary>
+        </member>
+        <member name="T:Pfz.RemoteGaming.VolatileGamePropertyAttribute">
+            <summary>
+            Use this attribute in game properties that change very frequently.
+            Such properties are always resent, but in a more compressed and simplified format.
+            </summary>
+        </member>
+    </members>
+</doc>

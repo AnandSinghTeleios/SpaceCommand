@@ -1,0 +1,233 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>AIController</name>
+    </assembly>
+    <members>
+        <member name="M:AIController.AI.Run">
+            <summary>
+             Commands in this method are repeated for the duration of the game
+            </summary>
+        </member>
+        <member name="M:AIController.AI.OnBulletHitBullet(AIController.IDrawableEntity)">
+            <summary>
+             Raised when a bullet hits another bullet
+            </summary>
+            <param name="bullet"> The bullet that was hit.</param>
+        </member>
+        <member name="M:AIController.AI.OnBulletHit(AIController.IDrawableEntity)">
+            <summary>
+             Raised when a bullet hits a ship
+            </summary>
+            <param name="ship"> The ship that was hit.</param>
+        </member>
+        <member name="M:AIController.AI.OnBulletMissed">
+            <summary>
+             Raised when a bullet hits an edge of the screen
+            </summary>
+        </member>
+        <member name="M:AIController.AI.OnHitByBullet(AIController.IDrawableEntity)">
+            <summary>
+             Raised when a bullet hits your ship
+            </summary>
+            <param name="bullet"> The bullet that hit.</param>
+        </member>
+        <member name="M:AIController.AI.OnScannedShip(AIController.IDrawableEntity)">
+            <summary>
+             Raised when a ship has been detected
+            </summary>
+            <param name="ship"> The ship that was detected.</param>
+        </member>
+        <member name="M:AIController.AI.OnDeath(AIController.IDrawableEntity)">
+            <summary>
+             Raised when your ship is destroyed
+            </summary>
+            <param name="ship"> The ship that destroyed you.</param>
+        </member>
+        <member name="M:AIController.AI.OnWin">
+            <summary>
+             Raised when your ship wins
+            </summary>
+        </member>
+        <member name="M:AIController.AI.OnCollideWithShip(AIController.IDrawableEntity)">
+            <summary>
+             Raised when your ship collides with another ship
+            </summary>
+            <param name="ship"> The ship that collided with you.</param>
+        </member>
+        <member name="M:AIController.AI.OnCollideWithTop">
+            <summary>
+             Raised when your ship collides with the top of the screen
+            </summary>
+        </member>
+        <member name="M:AIController.AI.OnCollideWithBottom">
+            <summary>
+             Raised when your ship collides with the bottom of the screen
+            </summary>
+        </member>
+        <member name="M:AIController.AI.OnCollideWithLeft">
+            <summary>
+             Raised when your ship collides with the left of the screen
+            </summary>
+        </member>
+        <member name="M:AIController.AI.OnCollideWithRight">
+            <summary>
+             Raised when your ship collides with the right of the screen
+            </summary>
+        </member>
+        <member name="M:AIController.Controller.SetShip(AIController.IDrawableEntity)">
+            <summary>
+             For internal use only
+            </summary>
+        </member>
+        <member name="M:AIController.Controller.RotateRight(System.Double)">
+            <summary>
+             Rotates a ship clockwise to the specified angle
+            </summary>
+            <param name="angle"> The angle to rotate to.</param>
+        </member>
+        <member name="M:AIController.Controller.RotateLeft(System.Double)">
+            <summary>
+             Rotates a ship anti-clockwise to the specified angle
+            </summary>
+            <param name="angle"> The angle to rotate to.</param>
+        </member>
+        <member name="M:AIController.Controller.Forward(System.Double)">
+            <summary>
+             Moves a ship forward for the amount of ticks specified
+            </summary>
+            <param name="amount"> How long to move for in ticks.</param>
+        </member>
+        <member name="M:AIController.Controller.Backward(System.Double)">
+            <summary>
+             Moves a ship backward for the amount of ticks specified
+            </summary>
+            <param name="amount"> How long to move for in ticks.</param>
+        </member>
+        <member name="M:AIController.Controller.Stop(System.Double)">
+            <summary>
+             Stops the ship for the amount of ticks specified
+            </summary>
+            <param name="amount"> How long to stop for in ticks.</param>
+        </member>
+        <member name="M:AIController.Controller.Fire(System.Int32)">
+            <summary>
+             Fires a projectile in the direction that the ship is facing
+             Projectiles can be of 3 types:
+             0 - Small bullet
+             1 - Plasma cannon
+             2 - Missile
+            </summary>
+            <param name="type"> The type of projectile to fire.</param>
+        </member>
+        <member name="M:AIController.Controller.Scan">
+            <summary>
+             Scans for other ships in the direction that the ship is facing
+            </summary>
+        </member>
+        <member name="M:AIController.Controller.GetAngle">
+            <summary>
+             Gets the angle that the ship is facing
+            </summary>
+            <returns> The ship's current angle</returns>
+        </member>
+        <member name="M:AIController.Controller.GetLife">
+            <summary>
+             Gets the ship's current health
+            </summary>
+            <returns> The ship's health</returns>
+        </member>
+        <member name="M:AIController.Controller.GetX">
+            <summary>
+             Gets the ship's current x position
+            </summary>
+            <returns> The ship's x position</returns>
+        </member>
+        <member name="M:AIController.Controller.GetY">
+            <summary>
+             Gets the ship's current y position
+            </summary>
+            <returns> The ship's y position</returns>
+        </member>
+        <member name="M:AIController.Controller.SetName(System.String)">
+            <summary>
+             Set the ship's name
+            </summary>
+            <param name="name"> The name of the ship.</param>
+        </member>
+        <member name="M:AIController.Controller.GetName">
+            <summary>
+             Gets the ship's name
+            </summary>
+            <returns> The ship's name</returns>
+        </member>
+        <member name="M:AIController.Controller.Process">
+            <summary>
+             For internal use only
+            </summary>
+        </member>
+        <member name="M:AIController.Controller.CanFireBullet">
+            <summary>
+             Gets the bullet firing status
+            </summary>
+            <returns> Whether the ship can fire a bullet</returns>
+        </member>
+        <member name="M:AIController.Controller.CanFirePlasma">
+            <summary>
+             Gets the plasma firing status
+            </summary>
+            <returns> Whether the ship can fire plasma</returns>
+        </member>
+        <member name="M:AIController.Controller.CanFireMissile">
+            <summary>
+             Gets the missile firing status
+            </summary>
+            <returns> Whether the ship can fire a missile</returns>
+        </member>
+        <member name="M:AIController.Controller.CanScan">
+            <summary>
+             Gets the scan status
+            </summary>
+            <returns> Whether the ship can scan for other ships</returns>
+        </member>
+        <member name="M:AIController.IDrawable.Draw">
+            <summary>
+             Render the drawable
+            </summary>
+        </member>
+        <member name="P:AIController.IDrawable.DrawOrder">
+            <summary>
+             The z order
+            </summary>
+        </member>
+        <member name="P:AIController.IDrawable.Alive">
+            <summary>
+             Gets whether the drawable is alive
+            </summary>
+        </member>
+        <member name="M:AIController.IDrawableEntity.GetAngle">
+            <summary>
+             Gets the ship's current angle
+            </summary>
+            <returns> The ship's angle</returns>
+        </member>
+        <member name="M:AIController.IDrawableEntity.GetX">
+            <summary>
+             Gets the ship's current x position
+            </summary>
+            <returns> The ship's x position</returns>
+        </member>
+        <member name="M:AIController.IDrawableEntity.GetY">
+            <summary>
+             Gets the ship's current y position
+            </summary>
+            <returns> The ship's y position</returns>
+        </member>
+        <member name="M:AIController.IDrawableEntity.GetName">
+            <summary>
+             Gets the ship's name
+            </summary>
+            <returns> The ship's name</returns>
+        </member>
+    </members>
+</doc>

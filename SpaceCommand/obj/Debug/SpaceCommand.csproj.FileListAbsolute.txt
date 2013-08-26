@@ -1,0 +1,14 @@
+c:\users\akash\documents\visual studio 2012\Projects\SpaceCommand\SpaceCommand\bin\Debug\SpaceCommand.dll
+c:\users\akash\documents\visual studio 2012\Projects\SpaceCommand\SpaceCommand\bin\Debug\SpaceCommand.pdb
+c:\users\akash\documents\visual studio 2012\Projects\SpaceCommand\SpaceCommand\bin\Debug\AIController.dll
+c:\users\akash\documents\visual studio 2012\Projects\SpaceCommand\SpaceCommand\bin\Debug\AIController.xml
+c:\users\akash\documents\visual studio 2012\Projects\SpaceCommand\SpaceCommand\obj\Debug\SpaceCommand.dll
+c:\users\akash\documents\visual studio 2012\Projects\SpaceCommand\SpaceCommand\obj\Debug\SpaceCommand.pdb
+C:\Users\Akash\Documents\Visual Studio 2012\Projects\SpaceCommand\SpaceCommand\obj\Debug\SpaceCommand.csprojResolveAssemblyReference.cache
+C:\Users\aharriram\Desktop\Challenge\SpaceCommand\SpaceCommand\SpaceCommand\bin\Debug\SpaceCommand.dll
+C:\Users\aharriram\Desktop\Challenge\SpaceCommand\SpaceCommand\SpaceCommand\bin\Debug\SpaceCommand.pdb
+C:\Users\aharriram\Desktop\Challenge\SpaceCommand\SpaceCommand\SpaceCommand\bin\Debug\AIController.dll
+C:\Users\aharriram\Desktop\Challenge\SpaceCommand\SpaceCommand\SpaceCommand\bin\Debug\AIController.xml
+C:\Users\aharriram\Desktop\Challenge\SpaceCommand\SpaceCommand\SpaceCommand\obj\Debug\SpaceCommand.csprojResolveAssemblyReference.cache
+C:\Users\aharriram\Desktop\Challenge\SpaceCommand\SpaceCommand\SpaceCommand\obj\Debug\SpaceCommand.dll
+C:\Users\aharriram\Desktop\Challenge\SpaceCommand\SpaceCommand\SpaceCommand\obj\Debug\SpaceCommand.pdb

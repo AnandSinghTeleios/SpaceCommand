@@ -1,0 +1,173 @@
+C:\Users\aharriram\Documents\Visual Studio 2012\Projects\AIChallenge\AIChallenge\bin\Debug\AIChallenge.exe.config
+C:\Users\aharriram\Documents\Visual Studio 2012\Projects\AIChallenge\AIChallenge\bin\Debug\Data\Cars\BlueCar\1.png
+C:\Users\aharriram\Documents\Visual Studio 2012\Projects\AIChallenge\AIChallenge\bin\Debug\Data\Maps\BigMap\background.jpg
+C:\Users\aharriram\Documents\Visual Studio 2012\Projects\AIChallenge\AIChallenge\bin\Debug\Data\Maps\BigMap\foreground.jpg
+C:\Users\aharriram\Documents\Visual Studio 2012\Projects\AIChallenge\AIChallenge\bin\Debug\Data\Maps\SmallMap\background.jpg
+C:\Users\aharriram\Documents\Visual Studio 2012\Projects\AIChallenge\AIChallenge\bin\Debug\AIChallenge.exe
+C:\Users\aharriram\Documents\Visual Studio 2012\Projects\AIChallenge\AIChallenge\bin\Debug\AIChallenge.pdb
+C:\Users\aharriram\Documents\Visual Studio 2012\Projects\AIChallenge\AIChallenge\bin\Debug\Pfz.dll
+C:\Users\aharriram\Documents\Visual Studio 2012\Projects\AIChallenge\AIChallenge\bin\Debug\Pfz.Drawing.Wpf.dll
+C:\Users\aharriram\Documents\Visual Studio 2012\Projects\AIChallenge\AIChallenge\bin\Debug\Pfz.RemoteGaming.dll
+C:\Users\aharriram\Documents\Visual Studio 2012\Projects\AIChallenge\AIChallenge\bin\Debug\Pfz.WpfControls.dll
+C:\Users\aharriram\Documents\Visual Studio 2012\Projects\AIChallenge\AIChallenge\bin\Debug\Pfz.xml
+C:\Users\aharriram\Documents\Visual Studio 2012\Projects\AIChallenge\AIChallenge\bin\Debug\Pfz.Drawing.Wpf.xml
+C:\Users\aharriram\Documents\Visual Studio 2012\Projects\AIChallenge\AIChallenge\bin\Debug\Pfz.RemoteGaming.xml
+C:\Users\aharriram\Documents\Visual Studio 2012\Projects\AIChallenge\AIChallenge\bin\Debug\Pfz.WpfControls.xml
+C:\Users\aharriram\Documents\Visual Studio 2012\Projects\AIChallenge\AIChallenge\obj\Debug\AIChallenge.csprojResolveAssemblyReference.cache
+C:\Users\aharriram\Documents\Visual Studio 2012\Projects\AIChallenge\AIChallenge\obj\Debug\MainWindow.g.cs
+C:\Users\aharriram\Documents\Visual Studio 2012\Projects\AIChallenge\AIChallenge\obj\Debug\App.g.cs
+C:\Users\aharriram\Documents\Visual Studio 2012\Projects\AIChallenge\AIChallenge\obj\Debug\AIChallenge_Content.g.cs
+C:\Users\aharriram\Documents\Visual Studio 2012\Projects\AIChallenge\AIChallenge\obj\Debug\GeneratedInternalTypeHelper.g.cs
+C:\Users\aharriram\Documents\Visual Studio 2012\Projects\AIChallenge\AIChallenge\obj\Debug\AIChallenge_MarkupCompile.cache
+C:\Users\aharriram\Documents\Visual Studio 2012\Projects\AIChallenge\AIChallenge\obj\Debug\AIChallenge_MarkupCompile.lref
+C:\Users\aharriram\Documents\Visual Studio 2012\Projects\AIChallenge\AIChallenge\obj\Debug\MainWindow.baml
+C:\Users\aharriram\Documents\Visual Studio 2012\Projects\AIChallenge\AIChallenge\obj\Debug\AIChallenge.g.resources
+C:\Users\aharriram\Documents\Visual Studio 2012\Projects\AIChallenge\AIChallenge\obj\Debug\AIChallenge.Properties.Resources.resources
+C:\Users\aharriram\Documents\Visual Studio 2012\Projects\AIChallenge\AIChallenge\obj\Debug\AIChallenge.csproj.GenerateResource.Cache
+C:\Users\aharriram\Documents\Visual Studio 2012\Projects\AIChallenge\AIChallenge\obj\Debug\AIChallenge.exe
+C:\Users\aharriram\Documents\Visual Studio 2012\Projects\AIChallenge\AIChallenge\obj\Debug\AIChallenge.pdb
+C:\Users\aharriram\Documents\Visual Studio 2012\Projects\AIChallenge\AIChallenge\bin\Debug\AIController.dll
+C:\Users\aharriram\Documents\Visual Studio 2012\Projects\AIChallenge\AIChallenge\bin\Debug\AIController.pdb
+C:\Users\aharriram\Documents\Visual Studio 2012\Projects\AIChallenge\AIChallenge\bin\Debug\Data\Cars\GreenCar\1.png
+C:\Users\aharriram\Documents\Visual Studio 2012\Projects\AIChallenge\AIChallenge\bin\Debug\Data\Cars\RedCar\1.png
+C:\Users\aharriram\Documents\Visual Studio 2012\Projects\AIChallenge\AIChallenge\bin\Debug\Data\scanBullet.png
+C:\Users\Akash\Downloads\AIChallenge (1)\AIChallenge\AIChallenge\bin\Debug\AIChallenge.exe.config
+C:\Users\Akash\Downloads\AIChallenge (1)\AIChallenge\AIChallenge\obj\Debug\AIChallenge.exe
+C:\Users\Akash\Downloads\AIChallenge (1)\AIChallenge\AIChallenge\obj\Debug\AIChallenge.pdb
+C:\Users\Akash\Downloads\AIChallenge (1)\AIChallenge\AIChallenge\bin\Debug\Data\scanBullet.png
+C:\Users\Akash\Downloads\AIChallenge (1)\AIChallenge\AIChallenge\bin\Debug\Data\Maps\BigMap\background.jpg
+C:\Users\Akash\Downloads\AIChallenge (1)\AIChallenge\AIChallenge\bin\Debug\Data\Maps\BigMap\foreground.jpg
+C:\Users\Akash\Downloads\AIChallenge (1)\AIChallenge\AIChallenge\bin\Debug\AIChallenge.exe
+C:\Users\Akash\Downloads\AIChallenge (1)\AIChallenge\AIChallenge\bin\Debug\AIChallenge.pdb
+C:\Users\Akash\Downloads\AIChallenge (1)\AIChallenge\AIChallenge\bin\Debug\AIController.dll
+C:\Users\Akash\Downloads\AIChallenge (1)\AIChallenge\AIChallenge\bin\Debug\Pfz.dll
+C:\Users\Akash\Downloads\AIChallenge (1)\AIChallenge\AIChallenge\bin\Debug\Pfz.Drawing.Wpf.dll
+C:\Users\Akash\Downloads\AIChallenge (1)\AIChallenge\AIChallenge\bin\Debug\Pfz.RemoteGaming.dll
+C:\Users\Akash\Downloads\AIChallenge (1)\AIChallenge\AIChallenge\bin\Debug\Pfz.WpfControls.dll
+C:\Users\Akash\Downloads\AIChallenge (1)\AIChallenge\AIChallenge\bin\Debug\AIController.pdb
+C:\Users\Akash\Downloads\AIChallenge (1)\AIChallenge\AIChallenge\bin\Debug\Pfz.xml
+C:\Users\Akash\Downloads\AIChallenge (1)\AIChallenge\AIChallenge\bin\Debug\Pfz.Drawing.Wpf.xml
+C:\Users\Akash\Downloads\AIChallenge (1)\AIChallenge\AIChallenge\bin\Debug\Pfz.RemoteGaming.xml
+C:\Users\Akash\Downloads\AIChallenge (1)\AIChallenge\AIChallenge\bin\Debug\Pfz.WpfControls.xml
+C:\Users\Akash\Downloads\AIChallenge (1)\AIChallenge\AIChallenge\obj\Debug\MainWindow.g.cs
+C:\Users\Akash\Downloads\AIChallenge (1)\AIChallenge\AIChallenge\obj\Debug\App.g.cs
+C:\Users\Akash\Downloads\AIChallenge (1)\AIChallenge\AIChallenge\obj\Debug\AIChallenge_Content.g.cs
+C:\Users\Akash\Downloads\AIChallenge (1)\AIChallenge\AIChallenge\obj\Debug\GeneratedInternalTypeHelper.g.cs
+C:\Users\Akash\Downloads\AIChallenge (1)\AIChallenge\AIChallenge\obj\Debug\AIChallenge_MarkupCompile.cache
+C:\Users\Akash\Downloads\AIChallenge (1)\AIChallenge\AIChallenge\obj\Debug\AIChallenge_MarkupCompile.lref
+C:\Users\Akash\Downloads\AIChallenge (1)\AIChallenge\AIChallenge\obj\Debug\MainWindow.baml
+C:\Users\Akash\Downloads\AIChallenge (1)\AIChallenge\AIChallenge\obj\Debug\AIChallenge.g.resources
+C:\Users\Akash\Downloads\AIChallenge (1)\AIChallenge\AIChallenge\obj\Debug\AIChallenge.Properties.Resources.resources
+C:\Users\Akash\Downloads\AIChallenge (1)\AIChallenge\AIChallenge\obj\Debug\AIChallenge.csproj.GenerateResource.Cache
+C:\Users\Akash\Downloads\AIChallenge (1)\AIChallenge\AIChallenge\obj\Debug\AIChallenge.csprojResolveAssemblyReference.cache
+C:\Users\Akash\Downloads\AIChallenge (1)\AIChallenge\AIChallenge\bin\Debug\Data\Ships\bullet1.png
+C:\Users\Akash\Downloads\AIChallenge (1)\AIChallenge\AIChallenge\bin\Debug\Data\Ships\bullet2.png
+C:\Users\Akash\Downloads\AIChallenge (1)\AIChallenge\AIChallenge\bin\Debug\Data\Ships\bullet3.png
+C:\Users\Akash\Downloads\AIChallenge (1)\AIChallenge\AIChallenge\bin\Debug\Data\Ships\ship1.png
+C:\Users\Akash\Downloads\AIChallenge (1)\AIChallenge\AIChallenge\bin\Debug\AIController.xml
+C:\Users\Akash\Downloads\AIChallenge (1)\AIChallenge\AIChallenge\bin\Debug\Data\Ships\shipkill.png
+C:\Users\Akash\Documents\Visual Studio 2012\Projects\AITest\AIChallenge\bin\Debug\Data\Maps\BigMap\background.jpg
+C:\Users\Akash\Documents\Visual Studio 2012\Projects\AITest\AIChallenge\bin\Debug\Data\Maps\BigMap\foreground.jpg
+C:\Users\Akash\Documents\Visual Studio 2012\Projects\AITest\AIChallenge\bin\Debug\Data\Ships\bullet1.png
+C:\Users\Akash\Documents\Visual Studio 2012\Projects\AITest\AIChallenge\bin\Debug\Data\Ships\bullet2.png
+C:\Users\Akash\Documents\Visual Studio 2012\Projects\AITest\AIChallenge\bin\Debug\Data\Ships\bullet3.png
+C:\Users\Akash\Documents\Visual Studio 2012\Projects\AITest\AIChallenge\bin\Debug\Data\Ships\shipkill.png
+C:\Users\Akash\Documents\Visual Studio 2012\Projects\AITest\AIChallenge\bin\Debug\Data\scanBullet.png
+C:\Users\Akash\Documents\Visual Studio 2012\Projects\AITest\AIChallenge\bin\Debug\Data\Ships\ship1.png
+C:\Users\Akash\Documents\Visual Studio 2012\Projects\AITest\AIChallenge\bin\Debug\AIChallenge.exe.config
+C:\Users\Akash\Documents\Visual Studio 2012\Projects\AITest\AIChallenge\bin\Debug\AIChallenge.exe
+C:\Users\Akash\Documents\Visual Studio 2012\Projects\AITest\AIChallenge\bin\Debug\AIChallenge.pdb
+C:\Users\Akash\Documents\Visual Studio 2012\Projects\AITest\AIChallenge\bin\Debug\AIController.dll
+C:\Users\Akash\Documents\Visual Studio 2012\Projects\AITest\AIChallenge\bin\Debug\Pfz.dll
+C:\Users\Akash\Documents\Visual Studio 2012\Projects\AITest\AIChallenge\bin\Debug\Pfz.Drawing.Wpf.dll
+C:\Users\Akash\Documents\Visual Studio 2012\Projects\AITest\AIChallenge\bin\Debug\Pfz.RemoteGaming.dll
+C:\Users\Akash\Documents\Visual Studio 2012\Projects\AITest\AIChallenge\bin\Debug\Pfz.WpfControls.dll
+C:\Users\Akash\Documents\Visual Studio 2012\Projects\AITest\AIChallenge\bin\Debug\AIController.xml
+C:\Users\Akash\Documents\Visual Studio 2012\Projects\AITest\AIChallenge\bin\Debug\Pfz.xml
+C:\Users\Akash\Documents\Visual Studio 2012\Projects\AITest\AIChallenge\bin\Debug\Pfz.Drawing.Wpf.xml
+C:\Users\Akash\Documents\Visual Studio 2012\Projects\AITest\AIChallenge\bin\Debug\Pfz.RemoteGaming.xml
+C:\Users\Akash\Documents\Visual Studio 2012\Projects\AITest\AIChallenge\bin\Debug\Pfz.WpfControls.xml
+C:\Users\Akash\Documents\Visual Studio 2012\Projects\AITest\AIChallenge\obj\Debug\AIChallenge.csprojResolveAssemblyReference.cache
+C:\Users\Akash\Documents\Visual Studio 2012\Projects\AITest\AIChallenge\obj\Debug\MainWindow.g.cs
+C:\Users\Akash\Documents\Visual Studio 2012\Projects\AITest\AIChallenge\obj\Debug\App.g.cs
+C:\Users\Akash\Documents\Visual Studio 2012\Projects\AITest\AIChallenge\obj\Debug\AIChallenge_Content.g.cs
+C:\Users\Akash\Documents\Visual Studio 2012\Projects\AITest\AIChallenge\obj\Debug\GeneratedInternalTypeHelper.g.cs
+C:\Users\Akash\Documents\Visual Studio 2012\Projects\AITest\AIChallenge\obj\Debug\AIChallenge_MarkupCompile.cache
+C:\Users\Akash\Documents\Visual Studio 2012\Projects\AITest\AIChallenge\obj\Debug\AIChallenge_MarkupCompile.lref
+C:\Users\Akash\Documents\Visual Studio 2012\Projects\AITest\AIChallenge\obj\Debug\MainWindow.baml
+C:\Users\Akash\Documents\Visual Studio 2012\Projects\AITest\AIChallenge\obj\Debug\AIChallenge.g.resources
+C:\Users\Akash\Documents\Visual Studio 2012\Projects\AITest\AIChallenge\obj\Debug\AIChallenge.Properties.Resources.resources
+C:\Users\Akash\Documents\Visual Studio 2012\Projects\AITest\AIChallenge\obj\Debug\AIChallenge.csproj.GenerateResource.Cache
+C:\Users\Akash\Documents\Visual Studio 2012\Projects\AITest\AIChallenge\obj\Debug\AIChallenge.exe
+C:\Users\Akash\Documents\Visual Studio 2012\Projects\AITest\AIChallenge\obj\Debug\AIChallenge.pdb
+C:\Users\Akash\Documents\Visual Studio 2012\Projects\SpaceCommand\AIChallenge\bin\Debug\AIChallenge.exe.config
+C:\Users\Akash\Documents\Visual Studio 2012\Projects\SpaceCommand\AIChallenge\obj\Debug\AIChallenge.exe
+C:\Users\Akash\Documents\Visual Studio 2012\Projects\SpaceCommand\AIChallenge\obj\Debug\AIChallenge.pdb
+C:\Users\Akash\Documents\Visual Studio 2012\Projects\SpaceCommand\AIChallenge\bin\Debug\Data\Maps\BigMap\background.jpg
+C:\Users\Akash\Documents\Visual Studio 2012\Projects\SpaceCommand\AIChallenge\bin\Debug\Data\Maps\BigMap\foreground.jpg
+C:\Users\Akash\Documents\Visual Studio 2012\Projects\SpaceCommand\AIChallenge\bin\Debug\Data\Ships\bullet1.png
+C:\Users\Akash\Documents\Visual Studio 2012\Projects\SpaceCommand\AIChallenge\bin\Debug\Data\Ships\bullet2.png
+C:\Users\Akash\Documents\Visual Studio 2012\Projects\SpaceCommand\AIChallenge\bin\Debug\Data\Ships\bullet3.png
+C:\Users\Akash\Documents\Visual Studio 2012\Projects\SpaceCommand\AIChallenge\bin\Debug\Data\Ships\shipkill.png
+C:\Users\Akash\Documents\Visual Studio 2012\Projects\SpaceCommand\AIChallenge\bin\Debug\Data\scanBullet.png
+C:\Users\Akash\Documents\Visual Studio 2012\Projects\SpaceCommand\AIChallenge\bin\Debug\Data\Ships\ship1.png
+C:\Users\Akash\Documents\Visual Studio 2012\Projects\SpaceCommand\AIChallenge\bin\Debug\AIChallenge.exe
+C:\Users\Akash\Documents\Visual Studio 2012\Projects\SpaceCommand\AIChallenge\bin\Debug\AIChallenge.pdb
+C:\Users\Akash\Documents\Visual Studio 2012\Projects\SpaceCommand\AIChallenge\bin\Debug\AIController.dll
+C:\Users\Akash\Documents\Visual Studio 2012\Projects\SpaceCommand\AIChallenge\bin\Debug\Pfz.dll
+C:\Users\Akash\Documents\Visual Studio 2012\Projects\SpaceCommand\AIChallenge\bin\Debug\Pfz.Drawing.Wpf.dll
+C:\Users\Akash\Documents\Visual Studio 2012\Projects\SpaceCommand\AIChallenge\bin\Debug\Pfz.RemoteGaming.dll
+C:\Users\Akash\Documents\Visual Studio 2012\Projects\SpaceCommand\AIChallenge\bin\Debug\Pfz.WpfControls.dll
+C:\Users\Akash\Documents\Visual Studio 2012\Projects\SpaceCommand\AIChallenge\bin\Debug\AIController.xml
+C:\Users\Akash\Documents\Visual Studio 2012\Projects\SpaceCommand\AIChallenge\bin\Debug\Pfz.xml
+C:\Users\Akash\Documents\Visual Studio 2012\Projects\SpaceCommand\AIChallenge\bin\Debug\Pfz.Drawing.Wpf.xml
+C:\Users\Akash\Documents\Visual Studio 2012\Projects\SpaceCommand\AIChallenge\bin\Debug\Pfz.RemoteGaming.xml
+C:\Users\Akash\Documents\Visual Studio 2012\Projects\SpaceCommand\AIChallenge\bin\Debug\Pfz.WpfControls.xml
+C:\Users\Akash\Documents\Visual Studio 2012\Projects\SpaceCommand\AIChallenge\obj\Debug\AIChallenge.csprojResolveAssemblyReference.cache
+C:\Users\Akash\Documents\Visual Studio 2012\Projects\SpaceCommand\AIChallenge\obj\Debug\MainWindow.g.cs
+C:\Users\Akash\Documents\Visual Studio 2012\Projects\SpaceCommand\AIChallenge\obj\Debug\App.g.cs
+C:\Users\Akash\Documents\Visual Studio 2012\Projects\SpaceCommand\AIChallenge\obj\Debug\AIChallenge_Content.g.cs
+C:\Users\Akash\Documents\Visual Studio 2012\Projects\SpaceCommand\AIChallenge\obj\Debug\GeneratedInternalTypeHelper.g.cs
+C:\Users\Akash\Documents\Visual Studio 2012\Projects\SpaceCommand\AIChallenge\obj\Debug\AIChallenge_MarkupCompile.cache
+C:\Users\Akash\Documents\Visual Studio 2012\Projects\SpaceCommand\AIChallenge\obj\Debug\AIChallenge_MarkupCompile.lref
+C:\Users\Akash\Documents\Visual Studio 2012\Projects\SpaceCommand\AIChallenge\obj\Debug\MainWindow.baml
+C:\Users\Akash\Documents\Visual Studio 2012\Projects\SpaceCommand\AIChallenge\obj\Debug\AIChallenge.g.resources
+C:\Users\Akash\Documents\Visual Studio 2012\Projects\SpaceCommand\AIChallenge\obj\Debug\AIChallenge.Properties.Resources.resources
+C:\Users\Akash\Documents\Visual Studio 2012\Projects\SpaceCommand\AIChallenge\obj\Debug\AIChallenge.csproj.GenerateResource.Cache
+C:\Users\aharriram\Desktop\Challenge\SpaceCommand\SpaceCommand\AIChallenge\bin\Debug\AIChallenge.exe.config
+C:\Users\aharriram\Desktop\Challenge\SpaceCommand\SpaceCommand\AIChallenge\obj\Debug\AIChallenge.exe
+C:\Users\aharriram\Desktop\Challenge\SpaceCommand\SpaceCommand\AIChallenge\obj\Debug\AIChallenge.pdb
+C:\Users\aharriram\Desktop\Challenge\SpaceCommand\SpaceCommand\AIChallenge\bin\Debug\Data\Maps\BigMap\background.jpg
+C:\Users\aharriram\Desktop\Challenge\SpaceCommand\SpaceCommand\AIChallenge\bin\Debug\Data\Maps\BigMap\foreground.jpg
+C:\Users\aharriram\Desktop\Challenge\SpaceCommand\SpaceCommand\AIChallenge\bin\Debug\Data\Ships\bullet1.png
+C:\Users\aharriram\Desktop\Challenge\SpaceCommand\SpaceCommand\AIChallenge\bin\Debug\Data\Ships\bullet2.png
+C:\Users\aharriram\Desktop\Challenge\SpaceCommand\SpaceCommand\AIChallenge\bin\Debug\Data\Ships\bullet3.png
+C:\Users\aharriram\Desktop\Challenge\SpaceCommand\SpaceCommand\AIChallenge\bin\Debug\Data\Ships\shipkill.png
+C:\Users\aharriram\Desktop\Challenge\SpaceCommand\SpaceCommand\AIChallenge\bin\Debug\Data\scanBullet.png
+C:\Users\aharriram\Desktop\Challenge\SpaceCommand\SpaceCommand\AIChallenge\bin\Debug\Data\Ships\ship1.png
+C:\Users\aharriram\Desktop\Challenge\SpaceCommand\SpaceCommand\AIChallenge\bin\Debug\AIChallenge.exe
+C:\Users\aharriram\Desktop\Challenge\SpaceCommand\SpaceCommand\AIChallenge\bin\Debug\AIChallenge.pdb
+C:\Users\aharriram\Desktop\Challenge\SpaceCommand\SpaceCommand\AIChallenge\bin\Debug\AIController.dll
+C:\Users\aharriram\Desktop\Challenge\SpaceCommand\SpaceCommand\AIChallenge\bin\Debug\Pfz.dll
+C:\Users\aharriram\Desktop\Challenge\SpaceCommand\SpaceCommand\AIChallenge\bin\Debug\Pfz.Drawing.Wpf.dll
+C:\Users\aharriram\Desktop\Challenge\SpaceCommand\SpaceCommand\AIChallenge\bin\Debug\Pfz.RemoteGaming.dll
+C:\Users\aharriram\Desktop\Challenge\SpaceCommand\SpaceCommand\AIChallenge\bin\Debug\Pfz.WpfControls.dll
+C:\Users\aharriram\Desktop\Challenge\SpaceCommand\SpaceCommand\AIChallenge\bin\Debug\AIController.xml
+C:\Users\aharriram\Desktop\Challenge\SpaceCommand\SpaceCommand\AIChallenge\bin\Debug\Pfz.xml
+C:\Users\aharriram\Desktop\Challenge\SpaceCommand\SpaceCommand\AIChallenge\bin\Debug\Pfz.Drawing.Wpf.xml
+C:\Users\aharriram\Desktop\Challenge\SpaceCommand\SpaceCommand\AIChallenge\bin\Debug\Pfz.RemoteGaming.xml
+C:\Users\aharriram\Desktop\Challenge\SpaceCommand\SpaceCommand\AIChallenge\bin\Debug\Pfz.WpfControls.xml
+C:\Users\aharriram\Desktop\Challenge\SpaceCommand\SpaceCommand\AIChallenge\obj\Debug\MainWindow.g.cs
+C:\Users\aharriram\Desktop\Challenge\SpaceCommand\SpaceCommand\AIChallenge\obj\Debug\App.g.cs
+C:\Users\aharriram\Desktop\Challenge\SpaceCommand\SpaceCommand\AIChallenge\obj\Debug\AIChallenge_Content.g.cs
+C:\Users\aharriram\Desktop\Challenge\SpaceCommand\SpaceCommand\AIChallenge\obj\Debug\GeneratedInternalTypeHelper.g.cs
+C:\Users\aharriram\Desktop\Challenge\SpaceCommand\SpaceCommand\AIChallenge\obj\Debug\AIChallenge_MarkupCompile.cache
+C:\Users\aharriram\Desktop\Challenge\SpaceCommand\SpaceCommand\AIChallenge\obj\Debug\AIChallenge_MarkupCompile.lref
+C:\Users\aharriram\Desktop\Challenge\SpaceCommand\SpaceCommand\AIChallenge\obj\Debug\MainWindow.baml
+C:\Users\aharriram\Desktop\Challenge\SpaceCommand\SpaceCommand\AIChallenge\obj\Debug\AIChallenge.g.resources
+C:\Users\aharriram\Desktop\Challenge\SpaceCommand\SpaceCommand\AIChallenge\obj\Debug\AIChallenge.Properties.Resources.resources
+C:\Users\aharriram\Desktop\Challenge\SpaceCommand\SpaceCommand\AIChallenge\obj\Debug\AIChallenge.csproj.GenerateResource.Cache
+C:\Users\aharriram\Desktop\Challenge\SpaceCommand\SpaceCommand\AIChallenge\obj\Debug\AIChallenge.csprojResolveAssemblyReference.cache
+\\svfile001\TS Root\Codeocracy\Week 5\Challenge - aharriram\SpaceCommand\SpaceCommand\AIChallenge\bin\Debug\AIChallenge.exe.config
+\\svfile001\TS Root\Codeocracy\Week 5\Challenge - aharriram\SpaceCommand\SpaceCommand\AIChallenge\obj\Debug\AIChallenge.exe
+\\svfile001\TS Root\Codeocracy\Week 5\Challenge - aharriram\SpaceCommand\SpaceCommand\AIChallenge\obj\Debug\AIChallenge.pdb

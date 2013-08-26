@@ -1,0 +1,310 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>Pfz.Drawing.Wpf</name>
+    </assembly>
+    <members>
+        <member name="T:Pfz.Drawing.Wpf.Argb">
+            <summary>
+            Structure that holds a color in Argb (Bgr32) format.
+            </summary>
+        </member>
+        <member name="M:Pfz.Drawing.Wpf.Argb.#ctor(System.Byte,System.Byte,System.Byte,System.Byte)">
+            <summary>
+            Creates a new Argb setting all its components.
+            </summary>
+        </member>
+        <member name="M:Pfz.Drawing.Wpf.Argb.#ctor(System.Byte,System.Byte,System.Byte)">
+            <summary>
+            Creates a new Argb setting only red, green and blue values. The Alpha value is set to 255.
+            </summary>
+        </member>
+        <member name="M:Pfz.Drawing.Wpf.Argb.CombineOver(Pfz.Drawing.Wpf.Argb)">
+            <summary>
+            Gets the combination of this color with an "old color".
+            This will only work if Alpha is different than 255. If not, the actual color will be returned.
+            </summary>
+        </member>
+        <member name="M:Pfz.Drawing.Wpf.Argb.CombineIn(Pfz.Drawing.Wpf.Argb)">
+            <summary>
+            Combines this color with another color.
+            The highest alpha is kept.
+            </summary>
+        </member>
+        <member name="M:Pfz.Drawing.Wpf.Argb.Combine(Pfz.Drawing.Wpf.Argb,Pfz.Drawing.Wpf.ColorCombineMode)">
+            <summary>
+            Combines this color with an old color using the given combineMode.
+            </summary>
+        </member>
+        <member name="M:Pfz.Drawing.Wpf.Argb.GetHashCode">
+            <summary>
+            Gets the HashCode of this color.
+            </summary>
+        </member>
+        <member name="M:Pfz.Drawing.Wpf.Argb.Equals(System.Object)">
+            <summary>
+            Compares this Argb color with another object.
+            </summary>
+        </member>
+        <member name="M:Pfz.Drawing.Wpf.Argb.Equals(Pfz.Drawing.Wpf.Argb)">
+            <summary>
+            Compares this Argb color with another one.
+            </summary>
+        </member>
+        <member name="M:Pfz.Drawing.Wpf.Argb.op_Equality(Pfz.Drawing.Wpf.Argb,Pfz.Drawing.Wpf.Argb)">
+            <summary>
+            Compares two Argb instances for Equality.
+            </summary>
+        </member>
+        <member name="M:Pfz.Drawing.Wpf.Argb.op_Inequality(Pfz.Drawing.Wpf.Argb,Pfz.Drawing.Wpf.Argb)">
+            <summary>
+            Compares two Argb instances for Inequality.
+            </summary>
+        </member>
+        <member name="M:Pfz.Drawing.Wpf.Argb.CompareTo(Pfz.Drawing.Wpf.Argb)">
+            <summary>
+            Compares two colors and returns their numeric difference.
+            </summary>
+        </member>
+        <member name="P:Pfz.Drawing.Wpf.Argb.Alpha">
+            <summary>
+            Gets the Alpha (opacity) value.
+            </summary>
+        </member>
+        <member name="P:Pfz.Drawing.Wpf.Argb.Red">
+            <summary>
+            Gets the Red color element.
+            </summary>
+        </member>
+        <member name="P:Pfz.Drawing.Wpf.Argb.Green">
+            <summary>
+            Gets the Green color element.
+            </summary>
+        </member>
+        <member name="P:Pfz.Drawing.Wpf.Argb.Blue">
+            <summary>
+            Gets the Blue color element.
+            </summary>
+        </member>
+        <member name="T:Pfz.Drawing.Wpf.BitmapEncoders">
+            <summary>
+            Class that helps loading all possible bitmap encoders and accessing them by the file extension.
+            </summary>
+        </member>
+        <member name="M:Pfz.Drawing.Wpf.BitmapEncoders.LoadAllDomainEncoders">
+            <summary>
+            Loads all encoders available in the current ApplicationDomain libraries.
+            </summary>
+        </member>
+        <member name="M:Pfz.Drawing.Wpf.BitmapEncoders.LoadAllEncoders(System.Reflection.Assembly)">
+            <summary>
+            Load all encoders available in a given library.
+            </summary>
+        </member>
+        <member name="M:Pfz.Drawing.Wpf.BitmapEncoders.LoadEncoder(System.Windows.Media.Imaging.BitmapEncoder)">
+            <summary>
+            Loads the given encoder.
+            </summary>
+        </member>
+        <member name="M:Pfz.Drawing.Wpf.BitmapEncoders.GetCodecInfo(System.Int32)">
+            <summary>
+            Gets the codec info for the given encoder index.
+            </summary>
+            <param name="encoderIndex"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Pfz.Drawing.Wpf.BitmapEncoders.GetEncoder(System.Int32)">
+            <summary>
+            Gets an empty encoder of the type of the encoder at encoderIndex.
+            </summary>
+        </member>
+        <member name="M:Pfz.Drawing.Wpf.BitmapEncoders.TryGetEncoder(System.String)">
+            <summary>
+            Tries to get an encoder by an extension, or returns null.
+            </summary>
+        </member>
+        <member name="M:Pfz.Drawing.Wpf.BitmapEncoders.GetEncoder(System.String)">
+            <summary>
+            Gets an encoder by an extension or throws an exception.
+            </summary>
+        </member>
+        <member name="P:Pfz.Drawing.Wpf.BitmapEncoders.AllExtensions">
+            <summary>
+            Gets all the extensions supported by joining all formats supported by all encoders.
+            </summary>
+        </member>
+        <member name="P:Pfz.Drawing.Wpf.BitmapEncoders.EncoderCount">
+            <summary>
+            Gets the number of encoders available.
+            </summary>
+        </member>
+        <member name="T:Pfz.Drawing.Wpf.ColorCombineMode">
+            <summary>
+            Enumeration used to know which combination of colors must be used.
+            </summary>
+        </member>
+        <member name="F:Pfz.Drawing.Wpf.ColorCombineMode.Replace">
+            <summary>
+            The new color simple replaces the old color. Transparency is not considered.
+            </summary>
+        </member>
+        <member name="F:Pfz.Drawing.Wpf.ColorCombineMode.CombineIn">
+            <summary>
+            The color is combined with the old color, and the old alpha is kept.
+            </summary>
+        </member>
+        <member name="F:Pfz.Drawing.Wpf.ColorCombineMode.CombineOver">
+            <summary>
+            The new color is considered to be over the old color. So, a 50% red over a 50% green will end-up 75% red and 25% green, with 25% of transparency.
+            </summary>
+        </member>
+        <member name="T:Pfz.Drawing.Wpf.LockedBitmap">
+            <summary>
+            This class is returned by ManagedBitmap Lock and TryLock methods. This allows you to access pixels in a safe and relatively fast manner.
+            </summary>
+        </member>
+        <member name="M:Pfz.Drawing.Wpf.LockedBitmap.Dispose">
+            <summary>
+            Unlocks the bitmap.
+            </summary>
+        </member>
+        <member name="M:Pfz.Drawing.Wpf.LockedBitmap.AddDirtyRect(System.Windows.Int32Rect)">
+            <summary>
+            Tells the real bitmap that an area was changed, so controls using it as a BitmapSource can update themselves.
+            </summary>
+        </member>
+        <member name="M:Pfz.Drawing.Wpf.LockedBitmap.AddDirtyRect(System.Int32,System.Int32,System.Int32,System.Int32)">
+            <summary>
+            Tells the real bitmap that an area was changed, so controls using it as a BitmapSource can update themselves.
+            </summary>
+        </member>
+        <member name="M:Pfz.Drawing.Wpf.LockedBitmap.DrawPoint(System.Int32,System.Int32,Pfz.Drawing.Wpf.Argb,Pfz.Drawing.Wpf.ColorCombineMode)">
+            <summary>
+            Applies an Argb color to a given pixel, and allows combinations of transparency to be used.
+            </summary>
+        </member>
+        <member name="M:Pfz.Drawing.Wpf.LockedBitmap.FillRectangle(System.Int32,System.Int32,System.Int32,System.Int32,Pfz.Drawing.Wpf.Argb,Pfz.Drawing.Wpf.ColorCombineMode)">
+            <summary>
+            Replaces the color of a rectangle with the given color. Note that using a transparent color will replace the area with the transparent
+            color, instead of applying it.
+            </summary>
+        </member>
+        <member name="M:Pfz.Drawing.Wpf.LockedBitmap.Fill(System.Int32,System.Int32,Pfz.Drawing.Wpf.Argb,Pfz.Drawing.Wpf.ColorCombineMode)">
+            <summary>
+            Fills an area, starting at the given point,  with the given color.
+            </summary>
+        </member>
+        <member name="M:Pfz.Drawing.Wpf.LockedBitmap.DrawBlockTo(Pfz.Drawing.Wpf.LockedBitmap,Pfz.Drawing.Wpf.ColorCombineMode)">
+            <summary>
+            Applies the pixels of this bitmap to another one, so transparent colors will be combined.
+            </summary>
+        </member>
+        <member name="M:Pfz.Drawing.Wpf.LockedBitmap.DrawBlockTo(Pfz.Drawing.Wpf.LockedBitmap,Pfz.Drawing.Wpf.ColorCombineMode,System.Int32,System.Int32,System.Int32,System.Int32,System.Int32,System.Int32)">
+            <summary>
+            Applies the pixels of this bitmap to another one, so transparent colors will be combined.
+            </summary>
+        </member>
+        <member name="P:Pfz.Drawing.Wpf.LockedBitmap.Item(System.Int32,System.Int32)">
+            <summary>
+            Gets or sets a pixel Argb value.
+            </summary>
+        </member>
+        <member name="P:Pfz.Drawing.Wpf.LockedBitmap.Bitmap">
+            <summary>
+            Gets the ManagedBitmap that created this LockedBitmap.
+            </summary>
+        </member>
+        <member name="P:Pfz.Drawing.Wpf.LockedBitmap.Width">
+            <summary>
+            Gets the Width of the Bitmap.
+            </summary>
+        </member>
+        <member name="P:Pfz.Drawing.Wpf.LockedBitmap.Height">
+            <summary>
+            Gets the Height of the Bitmap.
+            </summary>
+        </member>
+        <member name="P:Pfz.Drawing.Wpf.LockedBitmap.Stride">
+            <summary>
+            Gets the Stride of the bitmap. (the number of bytes used for each row).
+            </summary>
+        </member>
+        <member name="P:Pfz.Drawing.Wpf.LockedBitmap.Scanline0">
+            <summary>
+            Gets the memory address of the first line.
+            </summary>
+        </member>
+        <member name="T:Pfz.Drawing.Wpf.ManagedBitmap">
+            <summary>
+            This class holds a 32-bit WriteableBitmap, but its Lock methods return a LockedBitmap class, which can be disposed to unlock it,
+            and also has some methods to access its pixels in a fast and safe manner.
+            </summary>
+        </member>
+        <member name="M:Pfz.Drawing.Wpf.ManagedBitmap.#ctor(System.Windows.Media.Imaging.BitmapSource)">
+            <summary>
+            Creates a new ManagedBitmap copying the given imagesource.
+            </summary>
+            <param name="bitmapSource"></param>
+        </member>
+        <member name="M:Pfz.Drawing.Wpf.ManagedBitmap.#ctor(System.Windows.Media.Imaging.WriteableBitmap)">
+            <summary>
+            Creates a new ManagedBitmap over a writeableBitmap, which must be of PixelFormat Bgra32.
+            </summary>
+        </member>
+        <member name="M:Pfz.Drawing.Wpf.ManagedBitmap.#ctor(System.Int32,System.Int32,System.Double,System.Double)">
+            <summary>
+            Creates a new ManagedBitmap with the given size and dpi.
+            </summary>
+        </member>
+        <member name="M:Pfz.Drawing.Wpf.ManagedBitmap.Lock">
+            <summary>
+            Locks the bitmap. This method will wait for the bitmap to be unlocked, indefinitely, if it is already locked.
+            </summary>
+        </member>
+        <member name="M:Pfz.Drawing.Wpf.ManagedBitmap.TryLock(System.Windows.Duration)">
+            <summary>
+            Tries to lock the bitmap. If the bitmap is locked, a LockedBitmap will be returned. If not, null will be returned.
+            </summary>
+        </member>
+        <member name="M:Pfz.Drawing.Wpf.ManagedBitmap.CreateCopy">
+            <summary>
+            Useful for medium-trust application that need to draw the image.
+            </summary>
+        </member>
+        <member name="P:Pfz.Drawing.Wpf.ManagedBitmap.WriteableBitmap">
+            <summary>
+            Gets the WriteableBitmap generated by this class.
+            </summary>
+        </member>
+        <member name="T:Pfz.Drawing.Wpf.SaveBitmapDialog">
+            <summary>
+            A bitmap dialog capable of saving Bitmaps in any supported format of a BitmapEncoders instance.
+            </summary>
+        </member>
+        <member name="M:Pfz.Drawing.Wpf.SaveBitmapDialog.#ctor(Pfz.Drawing.Wpf.BitmapEncoders)">
+            <summary>
+            Creates a new SaveBitmapDialog using the actual encoders available in "encoders".
+            </summary>
+        </member>
+        <member name="M:Pfz.Drawing.Wpf.SaveBitmapDialog.ShowDialog">
+            <summary>
+            Show the dialog.
+            </summary>
+        </member>
+        <member name="M:Pfz.Drawing.Wpf.SaveBitmapDialog.Save(System.Windows.Media.Imaging.BitmapSource)">
+            <summary>
+            Shows the dialog and already saves the bitmap for you.
+            </summary>
+        </member>
+        <member name="P:Pfz.Drawing.Wpf.SaveBitmapDialog.Encoder">
+            <summary>
+            Gets the chosen encoder.
+            </summary>
+        </member>
+        <member name="P:Pfz.Drawing.Wpf.SaveBitmapDialog.FileName">
+            <summary>
+            Gets the chosen filename.
+            </summary>
+        </member>
+    </members>
+</doc>

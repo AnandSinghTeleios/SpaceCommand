@@ -1,0 +1,1311 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>Pfz.WpfControls</name>
+    </assembly>
+    <members>
+        <member name="T:Pfz.WpfControls.BoundControl">
+            <summary>
+            This class contains the dependency properties of the generic 
+            PropertyBoundControl and some methods to discover if a DataSource
+            is read-only.
+            </summary>
+        </member>
+        <member name="T:Pfz.WpfControls.ContentCreatorControl">
+            <summary>
+            Base control used by those controls that create their own content by some of its properties.
+            Gives some methods to control the creation/recreation of its content.
+            </summary>
+        </member>
+        <member name="M:Pfz.WpfControls.ContentCreatorControl.CreateContentNowIfNeeded">
+            <summary>
+            Creates the Content now, and returns a value indicating if it was created (false if it was
+            already created).
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:Pfz.WpfControls.ContentCreatorControl.InvalidateContent">
+            <summary>
+            Tells the control that it must recreate its content.
+            </summary>
+        </member>
+        <member name="M:Pfz.WpfControls.ContentCreatorControl.MeasureOverride(System.Windows.Size)">
+            <summary>
+            Recreates the content now, if needed.
+            </summary>
+        </member>
+        <member name="M:Pfz.WpfControls.ContentCreatorControl.OnCreateContent">
+            <summary>
+            Must be implemented to create the content.
+            </summary>
+        </member>
+        <member name="F:Pfz.WpfControls.BoundControl.IsReadOnlyProperty">
+            <summary>
+            Gets or sets a value indicating if the control is read-only.
+            </summary>
+        </member>
+        <member name="M:Pfz.WpfControls.BoundControl.GetIsReadOnly(System.Windows.UIElement)">
+            <summary>
+            Gets a value indicating if the control is read-only.
+            </summary>
+        </member>
+        <member name="M:Pfz.WpfControls.BoundControl.SetIsReadOnly(System.Windows.UIElement,System.Boolean)">
+            <summary>
+            Sets a value indicating if the control is read-only.
+            </summary>
+        </member>
+        <member name="M:Pfz.WpfControls.BoundControl.OnIsReadOnlyChanged">
+            <summary>
+            Implemented by child-controls to change its visual state when IsReadOnly is changed.
+            </summary>
+        </member>
+        <member name="M:Pfz.WpfControls.BoundControl.IsDataSourceReadOnly(System.Object)">
+            <summary>
+            Checks if the given data-source is read-only.
+            Will use the registered functions for validation.
+            </summary>
+        </member>
+        <member name="M:Pfz.WpfControls.BoundControl.RegisterIsDataSourceReadOnlyFunction(System.Type,System.Func{System.Object,System.Boolean})">
+            <summary>
+            Registers a function to detect if a data-source is read-only.
+            </summary>
+        </member>
+        <member name="M:Pfz.WpfControls.BoundControl.RegisterIsDataSourceReadOnlyFunction(System.Type,System.Func{System.Object,System.Boolean},System.Boolean)">
+            <summary>
+            Registers a function to detect if a data-source is read-only.
+            </summary>
+        </member>
+        <member name="P:Pfz.WpfControls.BoundControl.IsReadOnly">
+            <summary>
+            Gets or sets a value indicating if this control is read-only.
+            </summary>
+        </member>
+        <member name="T:Pfz.WpfControls.ElementClosedEventArgs">
+            <summary>
+            Argument used by ModalPresented.ElementClosed event.
+            </summary>
+        </member>
+        <member name="P:Pfz.WpfControls.ElementClosedEventArgs.Element">
+            <summary>
+            Gets the Element being closed.
+            </summary>
+        </member>
+        <member name="P:Pfz.WpfControls.ElementClosedEventArgs.Result">
+            <summary>
+            Gets the result used when closing the element.
+            </summary>
+        </member>
+        <member name="T:Pfz.WpfControls.Editor">
+            <summary>
+            Class that controls how editors are shown in the application.
+            </summary>
+        </member>
+        <member name="M:Pfz.WpfControls.Editor.Edit``1(``0)">
+            <summary>
+            Edits the Record set to it. Waits until the record is edited.
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="P:Pfz.WpfControls.Editor.Editing">
+            <summary>
+            Gets or sets the function used to edit records for the entire application.
+            </summary>
+        </member>
+        <member name="T:Pfz.WpfControls.EditorForThisThread">
+            <summary>
+            Class responsible for setting the Editing function to the actual thread only.
+            When disposed, it restores the last one.
+            </summary>
+        </member>
+        <member name="M:Pfz.WpfControls.EditorForThisThread.#ctor(System.Func{Pfz.WpfControls.EditorArgs,System.Object})">
+            <summary>
+            Create a new instance of this class to set a new editing function to the actual thread.
+            If you want to set it globally, set the static Editor.Editing property.
+            </summary>
+        </member>
+        <member name="M:Pfz.WpfControls.EditorForThisThread.Dispose">
+            <summary>
+            Recovers the last Editing function for this thread.
+            </summary>
+        </member>
+        <member name="T:Pfz.WpfControls.SameAreaPanel">
+            <summary>
+            This is a simple panel created to make the last control always show before the others,
+            occupying all the content area. Is up to you to make the semi-transparent colors or
+            to make them centered.
+            </summary>
+        </member>
+        <member name="M:Pfz.WpfControls.SameAreaPanel.MeasureOverride(System.Windows.Size)">
+            <summary>
+            Sets the available size to all children.
+            </summary>
+        </member>
+        <member name="M:Pfz.WpfControls.SameAreaPanel.ArrangeOverride(System.Windows.Size)">
+            <summary>
+            Arranges all childrenin the same finalSize.
+            </summary>
+        </member>
+        <member name="T:Pfz.WpfControls.ModalPresenter">
+            <summary>
+            Control that presents other controls as "Modal", so it only returns when a result is given.
+            </summary>
+        </member>
+        <member name="F:Pfz.WpfControls.ModalPresenter.ElementPresentedEvent">
+            <summary>
+            The RoutedEvent for ControlPresented.
+            </summary>
+        </member>
+        <member name="F:Pfz.WpfControls.ModalPresenter.ElementClosedEvent">
+            <summary>
+            The RoutedEvent for ControlClosed.
+            </summary>
+        </member>
+        <member name="M:Pfz.WpfControls.ModalPresenter.#ctor">
+            <summary>
+            Creates a new ModalPresenter instance.
+            </summary>
+        </member>
+        <member name="M:Pfz.WpfControls.ModalPresenter.OnVisualParentChanged(System.Windows.DependencyObject)">
+            <summary>
+            When the Parent changes, closes all presented controls.
+            </summary>
+        </member>
+        <member name="M:Pfz.WpfControls.ModalPresenter.Close(System.Object)">
+            <summary>
+            Closes the actual element or throws an exception.
+            </summary>
+        </member>
+        <member name="M:Pfz.WpfControls.ModalPresenter.TryClose(System.Object)">
+            <summary>
+            Tries set a result for the actual control being presented.
+            If there is no control, returns false.
+            </summary>
+        </member>
+        <member name="M:Pfz.WpfControls.ModalPresenter.CloseAll">
+            <summary>
+            Closes all the presented controls.
+            </summary>
+        </member>
+        <member name="M:Pfz.WpfControls.ModalPresenter.PresentModal(System.Windows.UIElement)">
+            <summary>
+            Presents the given element as modal. Will wait until it returns.
+            </summary>
+        </member>
+        <member name="M:Pfz.WpfControls.ModalPresenter.Close(System.Windows.UIElement,System.Object)">
+            <summary>
+            Sets the result for a given element.
+            If that element doesn't exist, throws an exception.
+            </summary>
+        </member>
+        <member name="M:Pfz.WpfControls.ModalPresenter.TryClose(System.Windows.UIElement,System.Object)">
+            <summary>
+            Tries to set a result to the given element.
+            If the element doesn't exist, returns false.
+            </summary>
+        </member>
+        <member name="M:Pfz.WpfControls.ModalPresenter.StaticTryClose(System.Windows.FrameworkElement,System.Object)">
+            <summary>
+            Tries to set a ModalPresenter result over the given framework element.
+            It will search in all parents to see if one is a ModalPresenter. Returns true if it
+            finds and sets the result, false otherwise.
+            </summary>
+        </member>
+        <member name="P:Pfz.WpfControls.ModalPresenter.Children">
+            <summary>
+            Gets the Children collection.
+            </summary>
+        </member>
+        <member name="P:Pfz.WpfControls.ModalPresenter.MustPresentAllElements">
+            <summary>
+            Gets or sets a value indicating if all elements are shown (using LastShowsFirstPanel) or if only the last
+            one must be shown.
+            </summary>
+        </member>
+        <member name="E:Pfz.WpfControls.ModalPresenter.ElementPresented">
+            <summary>
+            Event invoked when a new element is presented.
+            </summary>
+        </member>
+        <member name="E:Pfz.WpfControls.ModalPresenter.ElementClosed">
+            <summary>
+            Event invoked when a modal element is closed.
+            </summary>
+        </member>
+        <member name="P:Pfz.WpfControls.ModalPresenter.ModalElement">
+            <summary>
+            Gets the actual ModalElement.
+            </summary>
+        </member>
+        <member name="T:Pfz.WpfControls.ElementPresentedEventArgs">
+            <summary>
+            Argument used by ModalPresenter.ElementPresented event.
+            </summary>
+        </member>
+        <member name="P:Pfz.WpfControls.ElementPresentedEventArgs.Element">
+            <summary>
+            Gets the Element being presented.
+            </summary>
+        </member>
+        <member name="T:Pfz.WpfControls.ModalPresenterChildren">
+            <summary>
+            Gets the Children of a ModalPresenter as a read-only collection.
+            </summary>
+        </member>
+        <member name="M:Pfz.WpfControls.ModalPresenterChildren.IndexOf(System.Windows.UIElement)">
+            <summary>
+            Gets the index of a given element.
+            </summary>
+        </member>
+        <member name="M:Pfz.WpfControls.ModalPresenterChildren.Contains(System.Windows.UIElement)">
+            <summary>
+            Gets a value indicating if the given element is contained in this collection.
+            </summary>
+            <param name="element"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Pfz.WpfControls.ModalPresenterChildren.CopyTo(System.Windows.UIElement[],System.Int32)">
+            <summary>
+            Copies the items in this collection to the given array.
+            </summary>
+        </member>
+        <member name="M:Pfz.WpfControls.ModalPresenterChildren.GetEnumerator">
+            <summary>
+            Gets an enumerator to iterate over all elements in this collection.
+            </summary>
+        </member>
+        <member name="P:Pfz.WpfControls.ModalPresenterChildren.Item(System.Int32)">
+            <summary>
+            Gets the element at the given index.
+            </summary>
+        </member>
+        <member name="P:Pfz.WpfControls.ModalPresenterChildren.Count">
+            <summary>
+            Gets the number of elements in this collection.
+            </summary>
+        </member>
+        <member name="T:Pfz.WpfControls.Searcher">
+            <summary>
+            Class that controls how all searches are shown in the application.
+            </summary>
+        </member>
+        <member name="M:Pfz.WpfControls.Searcher.Search(System.Type,System.Object,System.Boolean)">
+            <summary>
+            Searches for one or more records.
+            </summary>
+        </member>
+        <member name="M:Pfz.WpfControls.Searcher.SearchSingle``1(System.Object)">
+            <summary>
+            Searches a single record and wait until one is selected.
+            </summary>
+        </member>
+        <member name="M:Pfz.WpfControls.Searcher.SearchSingle(System.Type,System.Object)">
+            <summary>
+            Searches a single record and wait until one is selected.
+            </summary>
+        </member>
+        <member name="M:Pfz.WpfControls.Searcher.SearchMultiple(System.Type,System.Object)">
+            <summary>
+            Searches one or more results.
+            </summary>
+        </member>
+        <member name="P:Pfz.WpfControls.Searcher.Searching">
+            <summary>
+            Gets or sets the function used to show searchers in the entire application.
+            </summary>
+        </member>
+        <member name="T:Pfz.WpfControls.SearcherArgs">
+            <summary>
+            Argument used by the Searcher class when it needs to present a Searcher.
+            </summary>
+        </member>
+        <member name="P:Pfz.WpfControls.SearcherArgs.Searcher">
+            <summary>
+            Gets the Searcher that must be shown.
+            </summary>
+        </member>
+        <member name="P:Pfz.WpfControls.SearcherArgs.DefaultParameters">
+            <summary>
+            Gets or sets the default parameters.
+            </summary>
+        </member>
+        <member name="T:Pfz.WpfControls.SearcherControl">
+            <summary>
+            Control that shows the registered editor for a data-type.
+            </summary>
+        </member>
+        <member name="M:Pfz.WpfControls.SearcherControl.#cctor">
+            <summary>
+            Initializes the EditorControl class.
+            </summary>
+        </member>
+        <member name="M:Pfz.WpfControls.SearcherControl.OnCreateContent">
+            <summary>
+            Creates the Searcher for the appropriate datatype.
+            </summary>
+        </member>
+        <member name="P:Pfz.WpfControls.SearcherControl.DataType">
+            <summary>
+            Gets or sets the DataType of this control.
+            </summary>
+        </member>
+        <member name="P:Pfz.WpfControls.SearcherControl.Searcher">
+            <summary>
+            Gets the Searcher used by this control.
+            </summary>
+        </member>
+        <member name="T:Pfz.WpfControls.EditorArgs">
+            <summary>
+            Argument used by Editor class when an IEditor must be shown to edit a record.
+            </summary>
+        </member>
+        <member name="P:Pfz.WpfControls.EditorArgs.Editor">
+            <summary>
+            Gets the Editor that must be used/shown.
+            </summary>
+        </member>
+        <member name="P:Pfz.WpfControls.EditorArgs.Record">
+            <summary>
+            Gets or sets the record being edited.
+            </summary>
+        </member>
+        <member name="T:Pfz.WpfControls.EditorControl">
+            <summary>
+            Control that shows the registered editor for a data-type.
+            </summary>
+        </member>
+        <member name="M:Pfz.WpfControls.EditorControl.#cctor">
+            <summary>
+            Initializes the EditorControl class.
+            </summary>
+        </member>
+        <member name="M:Pfz.WpfControls.EditorControl.OnCreateContent">
+            <summary>
+            Creates the Editor for the appropriate datatype.
+            </summary>
+        </member>
+        <member name="P:Pfz.WpfControls.EditorControl.DataType">
+            <summary>
+            Gets or sets the DataType of this control.
+            </summary>
+        </member>
+        <member name="P:Pfz.WpfControls.EditorControl.Editor">
+            <summary>
+            Gets the Editor used by this control.
+            </summary>
+        </member>
+        <member name="T:Pfz.Extensions.PfzDependencyObjectExtensions">
+            <summary>
+            Adds the SetValueAsyncAndOnce method to DependencyObjects.
+            </summary>
+        </member>
+        <member name="M:Pfz.Extensions.PfzDependencyObjectExtensions.SetValueAsyncAndOnce(System.Windows.DependencyObject,System.Windows.DependencyProperty,System.Object,System.Windows.Threading.DispatcherPriority)">
+            <summary>
+            Calls Dispatcher.BeginIncoke to set a value to a property.
+            If many calls are done before the begin invoke is executed, only the last Set remains, all others
+            will simple be ignored, effectivelly doing only one set.
+            </summary>
+        </member>
+        <member name="T:Pfz.Extensions.PfzDispatcherExtensions">
+            <summary>
+            Adds the BeginInvokeOnce method to the Dispatcher class.
+            </summary>
+        </member>
+        <member name="M:Pfz.Extensions.PfzDispatcherExtensions.BeginInvokeOnce(System.Windows.Threading.Dispatcher,System.Action,System.Windows.Threading.DispatcherPriority)">
+            <summary>
+            Invokes the given Action only once.
+            That is, if a call was already made for an action and not yet processed, then the new 
+            call to BeginInvokeOnce will do nothing.
+            </summary>
+        </member>
+        <member name="M:Pfz.Extensions.PfzDispatcherExtensions.IsNullOrFinished(System.Windows.Threading.DispatcherOperation)">
+            <summary>
+            Verifies if a dispatcherOperation is a null instance, or if its status is finished.
+            </summary>
+        </member>
+        <member name="T:Pfz.WpfControls.HeadedWrapGrid">
+            <summary>
+            Wrap grid that allow headers to be set.
+            </summary>
+        </member>
+        <member name="M:Pfz.WpfControls.HeadedWrapGrid.#ctor">
+            <summary>
+            Creates a new instance.
+            </summary>
+        </member>
+        <member name="M:Pfz.WpfControls.HeadedWrapGrid.OnRenderSizeChanged(System.Windows.SizeChangedInfo)">
+            <summary>
+            Resizes the last item.
+            </summary>
+        </member>
+        <member name="P:Pfz.WpfControls.HeadedWrapGrid.SplitterWidth">
+            <summary>
+            Gets or sets the size of the splitter.
+            </summary>
+        </member>
+        <member name="P:Pfz.WpfControls.HeadedWrapGrid.HeaderHeight">
+            <summary>
+            Gets or sets the Height of the header.
+            </summary>
+        </member>
+        <member name="P:Pfz.WpfControls.HeadedWrapGrid.Headers">
+            <summary>
+            Gets the Headers collection.
+            </summary>
+        </member>
+        <member name="P:Pfz.WpfControls.HeadedWrapGrid.Children">
+            <summary>
+            Gets the Children of this control.
+            </summary>
+        </member>
+        <member name="T:Pfz.WpfControls.IAutoRegisterIsDataSourceReadOnlyFunction">
+            <summary>
+            Create classes that implement this interface and, if the assembly is referenced during load-time
+            such class will be instantiated and its IsReadOnly function will be registered.
+            </summary>
+        </member>
+        <member name="M:Pfz.WpfControls.IAutoRegisterIsDataSourceReadOnlyFunction.IsReadOnly(System.Object)">
+            <summary>
+            Must verify object for read-only.
+            </summary>
+        </member>
+        <member name="P:Pfz.WpfControls.IAutoRegisterIsDataSourceReadOnlyFunction.DataSourceType">
+            <summary>
+            The type of DataSource this interface is capable of verifying for read-only.
+            </summary>
+        </member>
+        <member name="P:Pfz.WpfControls.IAutoRegisterIsDataSourceReadOnlyFunction.CanUseForSubTypes">
+            <summary>
+            A value indicating if sub-types of the DataSourceType are to be processed using
+            this.
+            </summary>
+        </member>
+        <member name="T:Pfz.WpfControls.ControlFactory">
+            <summary>
+            The heart of Pfz.WpfControls and Pfz.Databasing.WpfControls.
+            This factory allows you to register IValueContainer controls, so
+            whenever you need a control for a specific type, the right control
+            will be created.
+            </summary>
+        </member>
+        <member name="M:Pfz.WpfControls.ControlFactory.TryCreateFor(System.Type)">
+            <summary>
+            Tries to create a control for the given data-type.
+            The result can be null if there is not a control appropriate for the
+            data-type.
+            </summary>
+        </member>
+        <member name="M:Pfz.WpfControls.ControlFactory.TryCreateFor(System.Type,System.String)">
+            <summary>
+            Tries to create a control for the given data-type using the given
+            displayName. If the control does not support displayName, a 
+            LabellerControl will be created for it.
+            The result can be null if there is no editor for the given data-type.
+            </summary>
+        </member>
+        <member name="T:Pfz.Extensions.PfzElementExtensions">
+            <summary>
+            Adds methods to find enumerate all controls and sub-controls.
+            </summary>
+        </member>
+        <member name="M:Pfz.Extensions.PfzElementExtensions.EnumerateElementsRecursive(System.Windows.UIElement)">
+            <summary>
+            Gets the actual element and all it's sub-elements recursivelly.
+            </summary>
+        </member>
+        <member name="M:Pfz.Extensions.PfzElementExtensions.EnumerateElementsRecursive``1(System.Windows.UIElement)">
+            <summary>
+            Gets all elements of the given type, recursivelly, from the given base element.
+            </summary>
+        </member>
+        <member name="M:Pfz.Extensions.PfzElementExtensions.GetParentOfType``1(System.Windows.FrameworkElement)">
+            <summary>
+            Gets the first parent found of the given type.
+            </summary>
+        </member>
+        <member name="M:Pfz.Extensions.PfzElementExtensions.FirstOrDefault``1(System.Windows.UIElement)">
+            <summary>
+            Gets the first element of the given type in the actual element.
+            </summary>
+        </member>
+        <member name="M:Pfz.Extensions.PfzElementExtensions.FindPropertySetter(System.Windows.FrameworkElement,System.Windows.DependencyProperty)">
+            <summary>
+            Finds the control that sets the given "cascading" property, considering the given element and its parent.
+            </summary>
+        </member>
+        <member name="M:Pfz.Extensions.PfzElementExtensions.ChangeValueWhereSet(System.Windows.FrameworkElement,System.Windows.DependencyProperty,System.Object)">
+            <summary>
+            This method sets the value of a property, considering it is already set, be in this element or
+            in one of its parents.
+            Throws an exception if the property is not set until the last parent.
+            </summary>
+        </member>
+        <member name="M:Pfz.Extensions.PfzElementExtensions.FocusFirstFocusable(System.Windows.FrameworkElement)">
+            <summary>
+            Tries to focus all elements and sub-elements of this control.
+            Returns when the first one is focused.
+            </summary>
+        </member>
+        <member name="T:Pfz.WpfControls.IHasDisplayName">
+            <summary>
+            Interface used to tell that the control is able to show it's own
+            DisplayName (such as checkbox). If the control needs a label and
+            does not support it, a LabellerControl will be created.
+            </summary>
+        </member>
+        <member name="P:Pfz.WpfControls.IHasDisplayName.DisplayName">
+            <summary>
+            Gets or sets the DisplayName of the control.
+            </summary>
+        </member>
+        <member name="T:Pfz.WpfControls.IHasValueChanged">
+            <summary>
+            Interface used by value-controls capable of telling that their value
+            has changed without the need to wait for LostKeyboardFocus.
+            </summary>
+        </member>
+        <member name="E:Pfz.WpfControls.IHasValueChanged.ValueChanged">
+            <summary>
+            Event invoked as soon as the value is changed by user action.
+            </summary>
+        </member>
+        <member name="T:Pfz.WpfControls.LabellerControl">
+            <summary>
+            Control used to put a label on the top-left of another data-control.
+            </summary>
+        </member>
+        <member name="F:Pfz.WpfControls.LabellerControl.LabelProperty">
+            <summary>
+            Dependency property of DisplayName.
+            </summary>
+        </member>
+        <member name="M:Pfz.WpfControls.LabellerControl.#cctor">
+            <summary>
+            This strange construction tells to use the default-value of
+            Style as typeof(LabellerControl).
+            It is found in themes\generic.xaml (and must be located and called as such)
+            </summary>
+        </member>
+        <member name="P:Pfz.WpfControls.LabellerControl.Label">
+            <summary>
+            Gets or sets the label of this labeller control.
+            </summary>
+        </member>
+        <member name="T:Pfz.WpfControls.PropertyBinding">
+            <summary>
+            Class that holds the information of a binding to a property.
+            </summary>
+        </member>
+        <member name="F:Pfz.WpfControls.PropertyBinding.PropertyProperty">
+            <summary>
+            Dependency Property for "Property".
+            </summary>
+        </member>
+        <member name="F:Pfz.WpfControls.PropertyBinding.DisplayNameProperty">
+            <summary>
+            Dependency Property for "DisplayName".
+            </summary>
+        </member>
+        <member name="M:Pfz.WpfControls.PropertyBinding.ToString">
+            <summary>
+            Returns the appropriate DisplayName to use for the property.
+            </summary>
+        </member>
+        <member name="M:Pfz.WpfControls.PropertyBinding.op_Implicit(System.Reflection.PropertyInfo)~Pfz.WpfControls.PropertyBinding">
+            <summary>
+            Creates a binding implicitelly from a PropertyInfo.
+            </summary>
+        </member>
+        <member name="M:Pfz.WpfControls.PropertyBinding.CreateInstanceCore">
+            <summary>
+            Creates a new instance of PropertyBinding.
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="P:Pfz.WpfControls.PropertyBinding.Property">
+            <summary>
+            The property to bound-to.
+            </summary>
+        </member>
+        <member name="P:Pfz.WpfControls.PropertyBinding.DisplayName">
+            <summary>
+            The display name to be used. A null value means that the default
+            display name of the property will be used.
+            </summary>
+        </member>
+        <member name="T:Pfz.WpfControls.ObjectBoundControl`1">
+            <summary>
+            Controls that can be bound to a full record.
+            </summary>
+        </member>
+        <member name="M:Pfz.WpfControls.ObjectBoundControl`1.#ctor">
+            <summary>
+            Creates a new RecordBoundControl.
+            </summary>
+        </member>
+        <member name="M:Pfz.WpfControls.ObjectBoundControl`1.OnCreateContent">
+            <summary>
+            Creates its content.
+            </summary>
+        </member>
+        <member name="M:Pfz.WpfControls.ObjectBoundControl`1.ReadFromDataSource">
+            <summary>
+            Refreshes (re-reads) the data in all internal controls.
+            </summary>
+        </member>
+        <member name="M:Pfz.WpfControls.ObjectBoundControl`1.OnIsReadOnlyChanged">
+            <summary>
+            Calls ReadFromDataSourceNeeded.
+            </summary>
+        </member>
+        <member name="M:Pfz.WpfControls.ObjectBoundControl`1.ReadFromDataSourceNeeded">
+            <summary>
+            Tells that data-source must be re-read, but does not read it immediatelly.
+            </summary>
+        </member>
+        <member name="P:Pfz.WpfControls.ObjectBoundControl`1.Orientation">
+            <summary>
+            Gets or sets the orientation of the internal controls.
+            </summary>
+        </member>
+        <member name="P:Pfz.WpfControls.ObjectBoundControl`1.DataSource">
+            <summary>
+            Gets or sets the record to which this control is bound-to.
+            </summary>
+        </member>
+        <member name="P:Pfz.WpfControls.ObjectBoundControl`1.PropertyBindings">
+            <summary>
+            Gets or sets the propeties this control will display.
+            Example as string property:
+            FullTypeName.* (which will get all properties)
+            FullTypeName:PropertyName;OtherPropertyName
+            FullTypeName:PropertyName=Display name;OtherPropertyName=Other display name
+            FullTypeName.PropertyName=Display name;OtherFullTypeName.PropertyName=Other display name
+            </summary>
+        </member>
+        <member name="P:Pfz.WpfControls.ObjectBoundControl`1.Children">
+            <summary>
+            Gets the Children used by this control.
+            </summary>
+        </member>
+        <member name="E:Pfz.WpfControls.ObjectBoundControl`1.PropertyBoundControlsCreated">
+            <summary>
+            Event invoked whenever the child-controls are (re-)created.
+            </summary>
+        </member>
+        <member name="T:Pfz.WpfControls.ObjectBoundControl">
+            <summary>
+            Non-generic version of ObjectBoundControl. It's here because
+            Xaml does not support generic-classes and because the events
+            are better registered only once, as non-generic.
+            </summary>
+        </member>
+        <member name="F:Pfz.WpfControls.ObjectBoundControl.PropertyBoundControlsCreatedEvent">
+            <summary>
+            Event invoked when the ObjectBoundControl finishes creating all
+            it's property-bound controls.
+            </summary>
+        </member>
+        <member name="T:Pfz.WpfControls.SearcherForThisThread">
+            <summary>
+            Class responsible for setting the Searching function to the actual thread only.
+            When disposed, it restores the last one.
+            </summary>
+        </member>
+        <member name="M:Pfz.WpfControls.SearcherForThisThread.#ctor(System.Func{Pfz.WpfControls.SearcherArgs,System.Collections.Generic.ICollection{System.Object}})">
+            <summary>
+            Instantiate this class if you want to set an specific searching function for the actual thread.
+            If you want to set one to the entire application, use the Searcher.Searching static property instead.
+            </summary>
+        </member>
+        <member name="M:Pfz.WpfControls.SearcherForThisThread.Dispose">
+            <summary>
+            Recovers the last Searching function for this thread.
+            </summary>
+        </member>
+        <member name="T:Pfz.WpfControls.TypeConverters.ObservableLengthsConverter">
+            <summary>
+            Class that strings into GridLengths.
+            </summary>
+        </member>
+        <member name="M:Pfz.WpfControls.TypeConverters.ObservableLengthsConverter.CanConvertFrom(System.ComponentModel.ITypeDescriptorContext,System.Type)">
+            <summary>
+            Returns true for string.
+            </summary>
+        </member>
+        <member name="M:Pfz.WpfControls.TypeConverters.ObservableLengthsConverter.CanConvertTo(System.ComponentModel.ITypeDescriptorContext,System.Type)">
+            <summary>
+            Returns true for string.
+            </summary>
+        </member>
+        <member name="M:Pfz.WpfControls.TypeConverters.ObservableLengthsConverter.ConvertFrom(System.ComponentModel.ITypeDescriptorContext,System.Globalization.CultureInfo,System.Object)">
+            <summary>
+            Convert from string.
+            </summary>
+        </member>
+        <member name="M:Pfz.WpfControls.TypeConverters.ObservableLengthsConverter.ConvertTo(System.ComponentModel.ITypeDescriptorContext,System.Globalization.CultureInfo,System.Object,System.Type)">
+            <summary>
+            Convert to string.
+            </summary>
+        </member>
+        <member name="M:Pfz.WpfControls.TypeConverters.ObservableLengthsConverter.FromString(System.String)">
+            <summary>
+            Converts a string into an array of GridLengths.
+            </summary>
+        </member>
+        <member name="M:Pfz.WpfControls.TypeConverters.ObservableLengthsConverter.ToString(System.Collections.Generic.IEnumerable{System.Windows.GridLength})">
+            <summary>
+            Converts a collection of GridLengths to a string separated by comma.
+            </summary>
+        </member>
+        <member name="T:Pfz.WpfControls.PropertyBindingsConverter">
+            <summary>
+            This class allows to convert strings to full observable-collections of
+            PropertyBounds.
+            Examples:
+            FullTypeName.* (which will get all properties from that interface type and parent interfaces).
+            FullTypeName:* (which will get all properties from that interface type, without parent interfaces)
+            FullTypeName:PropertyName;OtherPropertyName
+            FullTypeName:PropertyName=Display name;OtherPropertyName=Other display name
+            FullTypeName.PropertyName=Display name;OtherFullTypeName.PropertyName=Other display name
+            FullTypeName:*|OtherInterfaceType.PropertyName
+            </summary>
+        </member>
+        <member name="M:Pfz.WpfControls.PropertyBindingsConverter.CanConvertFrom(System.ComponentModel.ITypeDescriptorContext,System.Type)">
+            <summary>
+            Returns true for strings.
+            </summary>
+        </member>
+        <member name="M:Pfz.WpfControls.PropertyBindingsConverter.CanConvertTo(System.ComponentModel.ITypeDescriptorContext,System.Type)">
+            <summary>
+            Returns true for strings.
+            </summary>
+        </member>
+        <member name="M:Pfz.WpfControls.PropertyBindingsConverter.ConvertFrom(System.ComponentModel.ITypeDescriptorContext,System.Globalization.CultureInfo,System.Object)">
+            <summary>
+            Creates a PropertyBinding from a string.
+            </summary>
+        </member>
+        <member name="M:Pfz.WpfControls.PropertyBindingsConverter.ConvertTo(System.ComponentModel.ITypeDescriptorContext,System.Globalization.CultureInfo,System.Object,System.Type)">
+            <summary>
+            Gets the string representation of a property binding.
+            </summary>
+        </member>
+        <member name="T:Pfz.WpfControls.PropertyBindingConverter">
+            <summary>
+            Converts a PropertyBinding to and from strings.
+            </summary>
+        </member>
+        <member name="M:Pfz.WpfControls.PropertyBindingConverter.CanConvertFrom(System.ComponentModel.ITypeDescriptorContext,System.Type)">
+            <summary>
+            Returns true for strings.
+            </summary>
+        </member>
+        <member name="M:Pfz.WpfControls.PropertyBindingConverter.CanConvertTo(System.ComponentModel.ITypeDescriptorContext,System.Type)">
+            <summary>
+            Returns true for strings.
+            </summary>
+        </member>
+        <member name="M:Pfz.WpfControls.PropertyBindingConverter.ConvertFrom(System.ComponentModel.ITypeDescriptorContext,System.Globalization.CultureInfo,System.Object)">
+            <summary>
+            Gets a property binding from a string.
+            </summary>
+        </member>
+        <member name="M:Pfz.WpfControls.PropertyBindingConverter.ConvertFrom(System.String)">
+            <summary>
+            Gets a property binding from a string.
+            Use FullTypeName.PropertyName.
+            Optionally, use FullTypeName.PropertyName=Display name.
+            </summary>
+        </member>
+        <member name="M:Pfz.WpfControls.PropertyBindingConverter.ConvertTo(System.ComponentModel.ITypeDescriptorContext,System.Globalization.CultureInfo,System.Object,System.Type)">
+            <summary>
+            Converts a property binding to a string.
+            </summary>
+        </member>
+        <member name="M:Pfz.WpfControls.PropertyBindingConverter.ConvertTo(Pfz.WpfControls.PropertyBinding)">
+            <summary>
+            Converts a property binding to a string.
+            </summary>
+        </member>
+        <member name="T:Pfz.WpfControls.PropertyBoundControlBase">
+            <summary>
+            Base class for PropertyBoundControls that are generic.
+            </summary>
+        </member>
+        <member name="M:Pfz.WpfControls.PropertyBoundControlBase.ReadFromDataSource">
+            <summary>
+            Reads (refreshes) the value of the control from the data-source.
+            </summary>
+        </member>
+        <member name="M:Pfz.WpfControls.PropertyBoundControlBase.ApplyToDataSource">
+            <summary>
+            Sets the actual value of the control to the data-source.
+            </summary>
+        </member>
+        <member name="P:Pfz.WpfControls.PropertyBoundControlBase.Value">
+            <summary>
+            Gets or sets the value of this controls.
+            </summary>
+        </member>
+        <member name="T:Pfz.WpfControls.PropertyBoundControl`1">
+            <summary>
+            A control bound to a property of an object.
+            </summary>
+            <typeparam name="ObjectType">The type of the DataSource property.</typeparam>
+        </member>
+        <member name="M:Pfz.WpfControls.PropertyBoundControl`1.#ctor">
+            <summary>
+            Creates a new PropertyBoundControl instance.
+            </summary>
+        </member>
+        <member name="M:Pfz.WpfControls.PropertyBoundControl`1.ApplyToDataSource">
+            <summary>
+            Applies the changes done to this control to its data-source.
+            </summary>
+        </member>
+        <member name="M:Pfz.WpfControls.PropertyBoundControl`1.ReadFromDataSource">
+            <summary>
+            Reads (refreshes) the value of the control from the data-source.
+            </summary>
+        </member>
+        <member name="M:Pfz.WpfControls.PropertyBoundControl`1.OnCreateContent">
+            <summary>
+            Creates its content.
+            </summary>
+        </member>
+        <member name="M:Pfz.WpfControls.PropertyBoundControl`1.OnValueChanged(Pfz.WpfControls.ValueChangedEventArgs)">
+            <summary>
+            Method invoked when the value of this control changes.
+            </summary>
+        </member>
+        <member name="M:Pfz.WpfControls.PropertyBoundControl`1.OnIsReadOnlyChanged">
+            <summary>
+            Updates the internal Control IsReadOnlyProperty.
+            </summary>
+        </member>
+        <member name="P:Pfz.WpfControls.PropertyBoundControl`1.PropertyBinding">
+            <summary>
+            Gets or sets the PropertyBinding of this control.
+            </summary>
+        </member>
+        <member name="P:Pfz.WpfControls.PropertyBoundControl`1.CanShowDisplayName">
+            <summary>
+            Gets or sets a value indicating is the DisplayName can be shown.
+            </summary>
+        </member>
+        <member name="P:Pfz.WpfControls.PropertyBoundControl`1.DataSource">
+            <summary>
+            Gets or sets the object that is read/written as the data-source.
+            </summary>
+        </member>
+        <member name="P:Pfz.WpfControls.PropertyBoundControl`1.Value">
+            <summary>
+            Gets or sets the value of this controls.
+            </summary>
+        </member>
+        <member name="E:Pfz.WpfControls.PropertyBoundControl`1.ValueChanged">
+            <summary>
+            Event invoked when the value of this control changes.
+            </summary>
+        </member>
+        <member name="E:Pfz.WpfControls.PropertyBoundControl`1.ValueChangeThrownException">
+            <summary>
+            Event invoked when an exception is thrown during the process of 
+            ValueChange.
+            </summary>
+        </member>
+        <member name="T:Pfz.WpfControls.PropertyBoundControl">
+            <summary>
+            A property-bound control that uses the DataSource as a System.Object.
+            </summary>
+        </member>
+        <member name="M:Pfz.WpfControls.PropertyBoundControl.GetControlsBoundTo(System.Object)">
+            <summary>
+            Gets all the PropertyBoundControls bound to an specific object.
+            </summary>
+        </member>
+        <member name="M:Pfz.WpfControls.PropertyBoundControl.ApplyToDataSource(System.Object)">
+            <summary>
+            Applies all changes from PropertyBoundControls bound to the given dataSource.
+            </summary>
+        </member>
+        <member name="T:Pfz.WpfControls.PropertyInfoConverter">
+            <summary>
+            Converts a property info to and from strings.
+            </summary>
+        </member>
+        <member name="M:Pfz.WpfControls.PropertyInfoConverter.CanConvertFrom(System.ComponentModel.ITypeDescriptorContext,System.Type)">
+            <summary>
+            Returns true for strings.
+            </summary>
+        </member>
+        <member name="M:Pfz.WpfControls.PropertyInfoConverter.CanConvertTo(System.ComponentModel.ITypeDescriptorContext,System.Type)">
+            <summary>
+            Returns true for strings.
+            </summary>
+        </member>
+        <member name="M:Pfz.WpfControls.PropertyInfoConverter.ConvertFrom(System.String)">
+            <summary>
+            Gets the property info from a string representation.
+            The fulltypename.PropertyName should be used.
+            </summary>
+        </member>
+        <member name="M:Pfz.WpfControls.PropertyInfoConverter.ConvertFrom(System.ComponentModel.ITypeDescriptorContext,System.Globalization.CultureInfo,System.Object)">
+            <summary>
+            Gets the property info from a string representation.
+            The fulltypename.PropertyName should be used.
+            </summary>
+        </member>
+        <member name="M:Pfz.WpfControls.PropertyInfoConverter.ConvertTo(System.Reflection.PropertyInfo)">
+            <summary>
+            Gets the string representation of a propertyInfo.
+            </summary>
+        </member>
+        <member name="M:Pfz.WpfControls.PropertyInfoConverter.ConvertTo(System.ComponentModel.ITypeDescriptorContext,System.Globalization.CultureInfo,System.Object,System.Type)">
+            <summary>
+            Gets the string representation of a propertyInfo.
+            </summary>
+        </member>
+        <member name="T:Pfz.WpfControls.ValueChangedEventArgs">
+            <summary>
+            Argument passed as parameter to ValueControl.ValueChanged event.
+            </summary>
+        </member>
+        <member name="P:Pfz.WpfControls.ValueChangedEventArgs.WasChangedByUserAction">
+            <summary>
+            A boolean indicating if the event was invoked by a user action.
+            </summary>
+        </member>
+        <member name="T:Pfz.WpfControls.ValueControl">
+            <summary>
+            A control for editing values using the right editor for the data-type.
+            </summary>
+        </member>
+        <member name="F:Pfz.WpfControls.ValueControl.ValueChangedEvent">
+            <summary>
+            RoutedEvent invoked when the value of this control changes.
+            </summary>
+        </member>
+        <member name="F:Pfz.WpfControls.ValueControl.ValueChangeThrownExceptionEvent">
+            <summary>
+            Event invoked when the change into the value of this control causes
+            an error.
+            </summary>
+        </member>
+        <member name="M:Pfz.WpfControls.ValueControl.OnCreateContent">
+            <summary>
+            Creates its content.
+            </summary>
+        </member>
+        <member name="M:Pfz.WpfControls.ValueControl.OnValueChangeThrownException(Pfz.WpfControls.ValueExceptionEventArgs)">
+            <summary>
+            Method invoked when the processing of ValueChanged throws an exception.
+            </summary>
+        </member>
+        <member name="M:Pfz.WpfControls.ValueControl.OnLostKeyboardFocus(System.Windows.Input.KeyboardFocusChangedEventArgs)">
+            <summary>
+            Validates this controls.
+            </summary>
+        </member>
+        <member name="M:Pfz.WpfControls.ValueControl.OnValueChanged(Pfz.WpfControls.ValueChangedEventArgs)">
+            <summary>
+            Invoked when the value changes, be it by user action or code.
+            </summary>
+        </member>
+        <member name="M:Pfz.WpfControls.ValueControl.Clear">
+            <summary>
+            Clears the value of this control.
+            </summary>
+        </member>
+        <member name="P:Pfz.WpfControls.ValueControl.DataType">
+            <summary>
+            Gets or sets the DataType used by this ValueControl.
+            </summary>
+        </member>
+        <member name="P:Pfz.WpfControls.ValueControl.DisplayName">
+            <summary>
+            Gets or sets the displayname of the control.
+            </summary>
+        </member>
+        <member name="E:Pfz.WpfControls.ValueControl.ValueChanged">
+            <summary>
+            Event invoked when the value is changed, be it by user action
+            or code.
+            </summary>
+        </member>
+        <member name="E:Pfz.WpfControls.ValueControl.ValueChangeThrownException">
+            <summary>
+            Event invoked when the ValueChange process throws an exception.
+            </summary>
+        </member>
+        <member name="P:Pfz.WpfControls.ValueControl.Value">
+            <summary>
+            Gets or sets the value of the control.
+            </summary>
+        </member>
+        <member name="P:Pfz.WpfControls.ValueControl.IsReadOnly">
+            <summary>
+            Gets or sets a value indicating if this control is/should be read-only.
+            </summary>
+        </member>
+        <member name="T:Pfz.WpfControls.ValueControl`1">
+            <summary>
+            Typed version of value control.
+            </summary>
+        </member>
+        <member name="M:Pfz.WpfControls.ValueControl`1.#ctor">
+            <summary>
+            Creates a new typed value control.
+            </summary>
+        </member>
+        <member name="P:Pfz.WpfControls.ValueControl`1.Value">
+            <summary>
+            Gets or sets the value using the right type.
+            </summary>
+        </member>
+        <member name="M:Pfz.WpfControls.ValueControls.BooleanControl.#ctor">
+            <summary>
+            Creates a new boolean control instance.
+            </summary>
+        </member>
+        <member name="M:Pfz.WpfControls.ValueControls.BooleanControl.Clear">
+            <summary>
+            Sets the IsChecked to null.
+            </summary>
+        </member>
+        <member name="P:Pfz.WpfControls.ValueControls.BooleanControl.DisplayName">
+            <summary>
+            Gets or sets the DisplayName of this control.
+            </summary>
+        </member>
+        <member name="P:Pfz.WpfControls.ValueControls.BooleanControl.IsReadOnly">
+            <summary>
+            Gets or sets a value indicating if this control is/should be
+            read-only.
+            </summary>
+        </member>
+        <member name="T:Pfz.WpfControls.ValueControls.DateControl">
+            <summary>
+            Control used to represent a date.
+            </summary>
+        </member>
+        <member name="M:Pfz.WpfControls.ValueControls.DateControl.#ctor">
+            <summary>
+            Creates a new instance of the DateControl.
+            </summary>
+        </member>
+        <member name="M:Pfz.WpfControls.ValueControls.DateControl.Clear">
+            <summary>
+            Clears all the text-boxes.
+            </summary>
+        </member>
+        <member name="P:Pfz.WpfControls.ValueControls.DateControl.Value">
+            <summary>
+            Gets or sets the value as a nullable Date.
+            </summary>
+        </member>
+        <member name="P:Pfz.WpfControls.ValueControls.DateControl.IsReadOnly">
+            <summary>
+            Gets or sets a value indicating that the text-boxes are/should be
+            read-only.
+            </summary>
+        </member>
+        <member name="T:Pfz.WpfControls.ValueControls.DateTimeControl">
+            <summary>
+            Controls for editing DateTime values.
+            </summary>
+        </member>
+        <member name="M:Pfz.WpfControls.ValueControls.DateTimeControl.#ctor">
+            <summary>
+            Creates a new DateTime control.
+            </summary>
+        </member>
+        <member name="M:Pfz.WpfControls.ValueControls.DateTimeControl.Clear">
+            <summary>
+             Clears the Date and Time.
+            </summary>
+        </member>
+        <member name="P:Pfz.WpfControls.ValueControls.DateTimeControl.IsReadOnly">
+            <summary>
+            Gets or sets a value indicating that this control is read-only.
+            </summary>
+        </member>
+        <member name="P:Pfz.WpfControls.ValueControls.DateTimeControl.Value">
+            <summary>
+            Gets the value of this control.
+            </summary>
+        </member>
+        <member name="T:Pfz.WpfControls.ValueControls.EnumControl`1">
+            <summary>
+            Control that edit enums.
+            </summary>
+        </member>
+        <member name="M:Pfz.WpfControls.ValueControls.EnumControl`1.#ctor">
+            <summary>
+            Creates a new EnumControl instance.
+            </summary>
+        </member>
+        <member name="M:Pfz.WpfControls.ValueControls.EnumControl`1.Clear">
+            <summary>
+            Clears the selection.
+            </summary>
+        </member>
+        <member name="P:Pfz.WpfControls.ValueControls.EnumControl`1.Value">
+            <summary>
+            Gets or sets the enum value.
+            </summary>
+        </member>
+        <member name="T:Pfz.WpfControls.ValueControls.PasswordControl">
+            <summary>
+            Control used to get passwords with confirmation.
+            </summary>
+        </member>
+        <member name="M:Pfz.WpfControls.ValueControls.PasswordControl.#ctor">
+            <summary>
+            Creates a new password control.
+            </summary>
+        </member>
+        <member name="M:Pfz.WpfControls.ValueControls.PasswordControl.Clear">
+            <summary>
+            Clears both password boxes.
+            </summary>
+        </member>
+        <member name="P:Pfz.WpfControls.ValueControls.PasswordControl.IsReadOnly">
+            <summary>
+            Gets or sets a value telling that this control is read-only.
+            </summary>
+        </member>
+        <member name="P:Pfz.WpfControls.ValueControls.PasswordControl.Value">
+            <summary>
+            Gets or sets the password of the password boxes.
+            Note that an exception is thrown if the values are different.
+            </summary>
+        </member>
+        <member name="T:Pfz.WpfControls.ValueControls.StringControl">
+            <summary>
+            Control that shows a string representation of many types, such as
+            integers, short-integers, decimals and others. Of course, string
+            itself is valid.
+            </summary>
+        </member>
+        <member name="M:Pfz.WpfControls.ValueControls.StringControl.#ctor">
+            <summary>
+            Creates a new StringControl instance.
+            </summary>
+        </member>
+        <member name="M:Pfz.WpfControls.ValueControls.StringControl.Clear">
+            <summary>
+            Clears the internal textbox.
+            </summary>
+        </member>
+        <member name="P:Pfz.WpfControls.ValueControls.StringControl.IsReadOnly">
+            <summary>
+            Gets or sets a value indicating if this control is read-only.
+            </summary>
+        </member>
+        <member name="P:Pfz.WpfControls.ValueControls.StringControl.Value">
+            <summary>
+            Gets or sets the value as a simple string.
+            </summary>
+        </member>
+        <member name="T:Pfz.WpfControls.ValueControls.TimeControl">
+            <summary>
+            Control used to edit Times without dates.
+            </summary>
+        </member>
+        <member name="M:Pfz.WpfControls.ValueControls.TimeControl.#ctor">
+            <summary>
+            Creates a new TimeControl.
+            </summary>
+        </member>
+        <member name="M:Pfz.WpfControls.ValueControls.TimeControl.Clear">
+            <summary>
+            Clears the value of this control.
+            </summary>
+        </member>
+        <member name="P:Pfz.WpfControls.ValueControls.TimeControl.IsReadOnly">
+            <summary>
+            Gets or sets a value indicating if this control is read-only.
+            </summary>
+        </member>
+        <member name="P:Pfz.WpfControls.ValueControls.TimeControl.Value">
+            <summary>
+            Gets or sets the value of this control.
+            </summary>
+        </member>
+        <member name="T:Pfz.WpfControls.ValueExceptionEventArgs">
+            <summary>
+            Class used when an exception is thrown during the user-change of a value control value.
+            </summary>
+        </member>
+        <member name="P:Pfz.WpfControls.ValueExceptionEventArgs.Exception">
+            <summary>
+            Gets or sets the exception that caused the error.
+            Modify it only if you want to add extra information.
+            </summary>
+        </member>
+        <member name="T:Pfz.WpfControls.WrapGrid">
+            <summary>
+            This grid considers columns widths (Auto is considered *), but also puts each element in the next cell automatically,
+            so you don't need to create many row definitions or to set Grid.Column and Grid.Row properties.
+            </summary>
+        </member>
+        <member name="M:Pfz.WpfControls.WrapGrid.#ctor">
+            <summary>
+            Create a new WrapGrid instance.
+            </summary>
+        </member>
+        <member name="M:Pfz.WpfControls.WrapGrid.MeasureOverride(System.Windows.Size)">
+            <summary>
+            Measures the size of each child and its own.
+            </summary>
+        </member>
+        <member name="M:Pfz.WpfControls.WrapGrid.ArrangeOverride(System.Windows.Size)">
+            <summary>
+            Positions the children.
+            </summary>
+        </member>
+        <member name="P:Pfz.WpfControls.WrapGrid.ColumnWidths">
+            <summary>
+            Gets the Widths collection.
+            </summary>
+        </member>
+        <member name="P:Pfz.WpfControls.WrapGrid.RowHeights">
+            <summary>
+            Sets the heights of the rows in this grid.
+            If this is not set, all rows are auto. If there are rows set, but there are more physical rows than set here
+            the definition of the last rows applies to all others.
+            </summary>
+        </member>
+        <member name="T:Pfz.WpfControls.WrapGridHeader">
+            <summary>
+            Represents a header for a HeadedWrapGrid.
+            </summary>
+        </member>
+        <member name="M:Pfz.WpfControls.WrapGridHeader.#ctor">
+            <summary>
+            Creates a new instance.
+            </summary>
+        </member>
+        <member name="M:Pfz.WpfControls.WrapGridHeader.OnRenderSizeChanged(System.Windows.SizeChangedInfo)">
+            <summary>
+            Resizes the related columns.
+            </summary>
+        </member>
+        <member name="P:Pfz.WpfControls.WrapGridHeader.Owner">
+            <summary>
+            Gets the grid that owns this header.
+            </summary>
+        </member>
+        <member name="P:Pfz.WpfControls.WrapGridHeader.Index">
+            <summary>
+            Gets the index of this header.
+            </summary>
+        </member>
+        <member name="P:Pfz.WpfControls.WrapGridHeader.ColumnWidth">
+            <summary>
+            Gets or sets the Width of this column.
+            </summary>
+        </member>
+    </members>
+</doc>

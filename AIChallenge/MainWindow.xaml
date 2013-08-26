@@ -1,0 +1,10 @@
+﻿<Window x:Class="AIChallenge.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:App="clr-namespace:AIChallenge"
+        xmlns:PfzWpf="clr-namespace:Pfz.WpfControls;assembly=Pfz.WpfControls"
+        Title="Space Command" Height="600" Width="800" Background="Black">
+    <PfzWpf:SameAreaPanel Name="sameAreaPanel">
+        <App:GameControl x:Name="gameControl"/>
+    </PfzWpf:SameAreaPanel>
+</Window>
